@@ -1,0 +1,23 @@
+flowchart LR
+
+A[User]
+
+A --> B[DynamoDB Schema Repo]
+
+A --> C[Lakehouse Schema Repo]
+
+A --> D[Business Use Cases]
+
+B --> E[AI Agent]
+
+C --> E
+
+D --> E
+
+E --> F[Schema Discovery]
+
+F --> G[Normalization]
+
+G --> H[Materialized Views]
+
+H --> I[Lakehouse Data Product]
