@@ -1,23 +1,26 @@
 flowchart LR
+    A[(DynamoDB<br/>Functional DB)] -->|Ingest| B[(Lakehouse<br/>Raw Layer)]
 
-A[User]
+    B --> C[Ingestion Date]
+    B --> D[JSON Blob]
+    B --> E[JSON Blob]
+    B --> F[JSON Blob]
 
-A --> B[DynamoDB Schema Repo]
+    D -.-> G[Hidden Schema]
+    E -.-> G
+    F -.-> G
 
-A --> C[Lakehouse Schema Repo]
+    G --> H{Manual Effort}
+    H --> I[Schema Discovery]
+    H --> J[Normalization]
+    H --> K[Materialized View Logic]
 
-A --> D[Business Use Cases]
+    I --> L[Slow Analytics]
+    J --> L
+    K --> L
 
-B --> E[AI Agent]
-
-C --> E
-
-D --> E
-
-E --> F[Schema Discovery]
-
-F --> G[Normalization]
-
-G --> H[Materialized Views]
-
-H --> I[Lakehouse Data Product]
+    style A fill:#EAF3FF,stroke:#0B1F3A,stroke-width:2px
+    style B fill:#F3E8FF,stroke:#4C1D95,stroke-width:2px
+    style G fill:#FFF7ED,stroke:#C2410C,stroke-width:2px
+    style H fill:#FEF2F2,stroke:#B91C1C,stroke-width:2px
+    style L fill:#DCFCE7,stroke:#166534,stroke-width:2px
