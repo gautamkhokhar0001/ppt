@@ -1,0 +1,480 @@
+How It Works? – End-to-End Automated Pipeline
+
+Create a single professional PowerPoint slide in 16:9 format (1920 × 1080).
+
+The design should resemble a Goldman Sachs / Microsoft / McKinsey engineering presentation, not a marketing infographic.
+
+The slide should have:
+
+White background (#FFFFFF)
+Dark Navy (#0B1F44) for titles
+Green (#2E7D32) for AI Agent section
+Purple (#6B4EFF) for outputs
+Light Blue (#F6FAFF) for inputs
+Thin gray connectors (#CBD5E1)
+Rounded rectangles (10–12 px radius)
+Soft shadows
+Microsoft Fluent icons only
+Large whitespace
+Minimal text
+Everything aligned to a 24-pixel grid
+HEADER
+
+Top Left
+
+Title
+
+How It Works?
+
+Segoe UI Semibold
+
+32 pt
+
+Dark Navy (#0B1F44)
+
+Below it
+
+Subtitle
+
+End-to-End Automated Pipeline
+
+18 pt
+
+Gray (#6B7280)
+
+Top Right
+
+Small Goldman Sachs logo
+
+20% opacity
+
+TOP PROGRESS BAR
+
+Create a horizontal process indicator spanning almost the full width.
+
+Six numbered blue circles.
+
+Each circle
+
+Fill
+
+#0B4EA2
+
+White number
+
+Size about 34 px
+
+Between circles
+
+Thin dashed gray arrows.
+
+Labels underneath
+
+① User Inputs
+
+② Intelligent Analysis
+
+③ Schema Discovery
+
+④ Normalization
+
+⑤ Materialized View Generation
+
+⑥ Analytics Ready
+
+This acts as the presentation roadmap.
+
+MAIN LAYOUT
+
+Create a three-column architecture.
+
+Inputs
+      →
+
+Intelligent Agent
+
+      →
+
+Outputs
+
+Inputs on left (20%)
+
+Agent center (55%)
+
+Outputs right (25%)
+
+LEFT PANEL
+
+Rounded rectangle.
+
+Background
+
+#F6FAFF
+
+Border
+
+#D7E6F7
+
+Title
+
+User Inputs
+
+Include a user icon.
+
+Subtitle
+
+(via VS Code Extension)
+
+Create three stacked cards.
+
+White background.
+
+Small shadow.
+
+Spacing 18 px.
+
+Card 1
+
+GitLab icon
+
+Title
+
+DynamoDB Schema Repository
+
+Subtitle
+
+(Data Models)
+
+Description
+
+Defines entities, attributes, keys and nested JSON structures.
+
+Card 2
+
+GitLab icon
+
+Title
+
+Lakehouse Schema Repository
+
+Subtitle
+
+(Existing Tables)
+
+Description
+
+Contains available analytical tables and metadata.
+
+Card 3
+
+Purple document icon
+
+Title
+
+Business Use Cases
+
+Subtitle
+
+(Given–When–Then)
+
+Description
+
+Business scenarios that require joins and analytics.
+
+Connect the panel to the Agent using a thick blue arrow.
+
+CENTER PANEL
+
+Large rounded rectangle.
+
+Border
+
+Green (#2E7D32)
+
+Background
+
+Very light green (#F8FFF8)
+
+Title
+
+🤖 Intelligent Agent
+
+Dark Green
+
+Bold
+
+26 pt
+
+Inside create five equal vertical sections
+
+Use dotted vertical separators.
+
+Each section contains
+
+Large vector icon
+
+Short title
+
+Two bullet points
+
+Step 1
+
+Magnifying glass + document
+
+Title
+
+Analyze
+
+Bullets
+
+• Parse Lakehouse JSON
+
+• Understand data structures
+
+Step 2
+
+Relationship graph icon
+
+Title
+
+Discover Schema
+
+Bullets
+
+• Infer entities
+
+• Detect keys & relationships
+
+Step 3
+
+Table icon
+
+Title
+
+Normalize
+
+Bullets
+
+• Flatten nested JSON
+
+• Generate parent-child tables
+
+Step 4
+
+Code icon
+
+Title
+
+Generate SQL
+
+Bullets
+
+• Table creation SQL
+
+• Materialized View SQL
+
+Step 5
+
+Database icon
+
+Title
+
+Create Views
+
+Bullets
+
+• Materialized Views
+
+• Summary Views
+
+Between every step
+
+Green arrows.
+
+The flow should look continuous.
+
+RIGHT PANEL
+
+Rounded rectangle.
+
+Background
+
+Very Light Purple (#FAF7FF)
+
+Border
+
+#D8C6FF
+
+Title
+
+Outputs
+
+Purple
+
+Three stacked cards.
+
+Card 1
+
+Table icon
+
+Title
+
+Normalized Tables
+
+Description
+
+Relational tables ready for analytics
+
+Card 2
+
+SQL icon
+
+Title
+
+Materialized Views
+
+Description
+
+Optimized SQL views for business queries
+
+Card 3
+
+Chart icon
+
+Title
+
+Summary Views
+
+Description
+
+Pre-computed aggregations for reporting
+
+Arrow from Agent to Outputs.
+
+BOTTOM RESPONSIBILITIES
+
+Centered.
+
+Rounded rectangle.
+
+Very light gray
+
+Title
+
+Agent Responsibilities
+
+Green
+
+Inside place five icons horizontally.
+
+Brain
+
+Analyze Schemas
+
+↓
+
+Relationship
+
+Infer Relationships
+
+↓
+
+Layers
+
+Normalize Nested JSON
+
+↓
+
+Code
+
+Generate Pure SQL
+
+↓
+
+Database
+
+Create Materialized Views
+
+Use equal spacing.
+
+Minimal labels.
+
+FINAL BUSINESS VALUE
+
+Bottom-right.
+
+Gold rounded rectangle.
+
+Background
+
+#FFF9E8
+
+Border
+
+#F5D67A
+
+Title
+
+Analytics Ready
+
+Three icons.
+
+Bar Chart
+
+BI Dashboards
+
+Search icon
+
+SQL Queries
+
+Robot
+
+Legend AI (Natural Language → Pure SQL)
+
+BOTTOM BANNER
+
+Dark Navy
+
+Full width
+
+Height 55 px
+
+Rounded corners
+
+Left
+
+Star icon
+
+White
+
+Text
+
+One-click automation: From DynamoDB and Lakehouse schema repositories plus business use cases to analytics-ready Lakehouse tables, materialized views, and AI-ready data products.
+
+White text.
+
+18 pt.
+
+VISUAL STYLE
+
+Use only Microsoft Fluent vector icons.
+
+No photos.
+
+No stock illustrations.
+
+No gradients except very subtle panel backgrounds.
+
+No heavy borders.
+
+Consistent spacing.
+
+Equal card sizes.
+
+Minimal text.
+
+Large icons.
+
+Professional enterprise architecture style.
+
+The final slide should immediately communicate that three inputs (schema repositories + use case) flow into a single intelligent agent, which automatically performs schema discovery, normalization, SQL generation, and materialized view creation to produce analytics-ready outputs. The slide should feel like an architecture diagram presented by a senior engineering team at Goldman Sachs rather than a colorful infographic.
