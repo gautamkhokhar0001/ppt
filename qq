@@ -1,0 +1,439 @@
+Create a single professional PowerPoint slide (16:9 aspect ratio, 1920×1080) in a Goldman Sachs corporate style.
+
+The slide should have a white background (#FFFFFF) with lots of whitespace and a clean enterprise look.
+
+Do NOT create a text-heavy slide.
+
+Use vector icons, rounded rectangles, thin connector arrows, and soft shadows.
+
+Use Segoe UI or Aptos font throughout.
+
+Title
+
+Current Manual Engineering Workflow
+
+Font:
+
+Segoe UI Semibold
+30 pt
+Dark Navy (#0B1F44)
+
+Subtitle:
+
+Why transforming semi-structured Lakehouse data is a manual, time-consuming process
+
+Font:
+
+Segoe UI
+18 pt
+Gray (#6B7280)
+
+Draw a thin horizontal divider below the subtitle.
+
+Overall Layout
+
+Create a three-column layout
+
+------------------------------------------------------------
+                 TITLE
+
+Inputs        Manual Workflow         Challenges
+------------------------------------------------------------
+
+Left column = 20%
+
+Center column = 60%
+
+Right column = 20%
+
+Everything perfectly aligned.
+
+Left Column
+
+Create a light blue rounded rectangle.
+
+Background:
+
+#F6FAFF
+
+Border:
+
+#D7E6F7
+
+Radius:
+
+12 px
+
+Title
+
+Inputs
+
+Center aligned.
+
+Dark Blue.
+
+Inside place three cards vertically.
+
+Each card has:
+
+white background
+
+light gray border
+
+small shadow
+
+Card 1
+
+GitLab icon
+
+Title
+
+DynamoDB Schema Repository
+
+Subtitle
+
+Data Model Definitions
+
+Small description
+
+Defines entities, attributes and relationships stored in DynamoDB.
+
+Card 2
+
+GitLab icon
+
+Title
+
+Lakehouse Schema Repository
+
+Subtitle
+
+Existing Analytical Tables
+
+Description
+
+Contains current Lakehouse table definitions.
+
+Card 3
+
+Purple document icon
+
+Title
+
+Business Use Cases
+
+Subtitle
+
+Given – When – Then
+
+Description
+
+Business questions requiring analytics-ready tables.
+
+Center Section
+
+Create a dark blue banner.
+
+Color:
+
+#0B1F44
+
+Rounded corners.
+
+Height about 55 px.
+
+Inside:
+
+Person icon
+
+Text
+
+Current Manual Engineering Workflow
+
+White
+
+Bold
+
+Below create six equally sized vertical cards.
+
+Each card:
+
+Width approximately 170 px
+
+Height approximately 280 px
+
+White
+
+Border #E5E7EB
+
+Radius 10 px
+
+Small shadow
+
+Between cards:
+
+Gray arrow (#9CA3AF)
+
+Card 1
+
+Blue document + magnifying glass icon
+
+Large icon
+
+Title
+
+Read Schema Repository
+
+Small bullets
+
+• Understand entities
+
+• Identify attributes
+
+• Review data models
+
+Top badge:
+
+Blue circle with number
+
+1
+
+Card 2
+
+Green JSON icon
+
+Title
+
+Inspect JSON Blobs
+
+Bullets
+
+• Read raw JSON
+
+• Understand nesting
+
+• Inspect arrays
+
+Number badge
+
+2
+
+Card 3
+
+Purple graph icon
+
+Title
+
+Infer Relationships
+
+Bullets
+
+• Parent-child mapping
+
+• Primary keys
+
+• Foreign keys
+
+Badge
+
+3
+
+Card 4
+
+Teal database table icon
+
+Title
+
+Design Relational Model
+
+Bullets
+
+• Normalize tables
+
+• Flatten nested structures
+
+• Define schema
+
+Badge
+
+4
+
+Card 5
+
+Purple code icon
+
+Title
+
+Write Pure SQL
+
+Bullets
+
+• Create table SQL
+
+• Generate Materialized Views
+
+• Validation
+
+Badge
+
+5
+
+Card 6
+
+Blue database cylinder icon
+
+Title
+
+Deploy in Lakehouse
+
+Bullets
+
+• Execute SQL
+
+• Validate outputs
+
+• Ready for analytics
+
+Badge
+
+6
+
+Below these six cards create a light gray rounded rectangle.
+
+Background
+
+#F8FAFC
+
+Title
+
+Manual Engineering Activities
+
+Inside place five icons horizontally.
+
+Brain
+
+Analyze Schemas
+
+↓
+
+Relationship icon
+
+Infer Relations
+
+↓
+
+Layers icon
+
+Normalize Data
+
+↓
+
+Code icon
+
+Generate SQL
+
+↓
+
+Database icon
+
+Create Materialized Views
+
+Right Column
+
+Create a light red rounded rectangle.
+
+Background
+
+#FFF7F7
+
+Border
+
+#F5C2C7
+
+Title
+
+Challenges
+
+Dark Red
+
+Inside place four challenge cards.
+
+Each with icon.
+
+Clock icon
+
+Time Consuming
+
+Manual effort for every dataset.
+
+Warning triangle
+
+Error Prone
+
+Human interpretation introduces inconsistencies.
+
+Repeat icon
+
+Highly Repetitive
+
+Same engineering workflow repeated for every new use case.
+
+Trending graph icon
+
+Not Scalable
+
+Process does not scale across multiple data products.
+
+Bottom Highlight Banner
+
+Create a full-width navy banner.
+
+Color
+
+#0B1F44
+
+Rounded corners.
+
+Height 60 px.
+
+Left side:
+
+Light bulb icon.
+
+White.
+
+Text
+
+Key Insight: Every new data product requires engineers to manually understand schemas, normalize nested JSON, generate SQL, and create materialized views. This repetitive workflow is the automation opportunity addressed by our solution.
+
+White text.
+
+18 pt.
+
+Visual Style
+
+Use Microsoft Fluent icons only.
+
+No photographs.
+
+No stock images.
+
+Only enterprise vector icons.
+
+Consistent spacing (24 px grid).
+
+Equal margins.
+
+Soft shadows only.
+
+Thin connector arrows.
+
+Rounded corners everywhere.
+
+Minimal text.
+
+Large visuals.
+
+Consulting presentation style.
+
+The slide should resemble presentations created by Goldman Sachs, Microsoft, or McKinsey—not a colorful infographic. The audience should immediately understand that the current engineering workflow is manual, repetitive, and the motivation for the automation solution shown on the next slide.
