@@ -1,23 +1,36 @@
 flowchart LR
 
-A[User]
+    A[(DynamoDB<br/>Functional DB)]
+    B[Ingest]
+    
+    subgraph L[Lakehouse Raw Layer]
+        T["<table>
+        <tr><th>Ingestion Date</th><th>JSON Blob</th></tr>
+        <tr><td>2024-05-01</td><td>{ ... }</td></tr>
+        <tr><td>2024-05-01</td><td>{ ... }</td></tr>
+        <tr><td>2024-05-02</td><td>{ ... }</td></tr>
+        <tr><td>...</td><td>...</td></tr>
+        </table>"]
+    end
 
-A --> B[DynamoDB Schema Repo]
+    A --> B --> L
 
-A --> C[Lakehouse Schema Repo]
+    subgraph C[Challenges]
+        C1["🧩<br/><b>Schema Discovery</b><br/>What's inside the JSON?"]
+        C2["🔗<br/><b>Normalization</b><br/>Nested? Lists within lists?<br/>How to model?"]
+    end
 
-A --> D[Business Use Cases]
+    L --> C1
+    L --> C2
 
-B --> E[AI Agent]
+    C1 --> D["Semi-structured data is hard to analyze, query, and trust"]
+    C2 --> D
 
-C --> E
-
-D --> E
-
-E --> F[Schema Discovery]
-
-F --> G[Normalization]
-
-G --> H[Materialized Views]
-
-H --> I[Lakehouse Data Product]
+    style A fill:#EAF3FF,stroke:#0B1F3A,stroke-width:2px,color:#0B1F3A
+    style B fill:#FFFFFF,stroke:#0B1F3A,color:#0B1F3A
+    style L fill:#F5F0FF,stroke:#6D28D9,stroke-width:2px,color:#0B1F3A
+    style T fill:#FFFFFF,stroke:#6D28D9,color:#0B1F3A
+    style C fill:#FFF7F7,stroke:#EF4444,stroke-width:2px,stroke-dasharray: 5 5,color:#0B1F3A
+    style C1 fill:#FFFFFF,stroke:#EF4444,color:#0B1F3A
+    style C2 fill:#FFFFFF,stroke:#EF4444,color:#0B1F3A
+    style D fill:#0B1F3A,stroke:#0B1F3A,color:#FFFFFF
