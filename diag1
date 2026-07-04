@@ -1,26 +1,36 @@
 flowchart LR
-    A[(DynamoDB<br/>Functional DB)] -->|Ingest| B[(Lakehouse<br/>Raw Layer)]
 
-    B --> C[Ingestion Date]
-    B --> D[JSON Blob]
-    B --> E[JSON Blob]
-    B --> F[JSON Blob]
+    A[(DynamoDB<br/>Functional DB)]
+    B[Ingest]
+    
+    subgraph L[Lakehouse Raw Layer]
+        T["<table>
+        <tr><th>Ingestion Date</th><th>JSON Blob</th></tr>
+        <tr><td>2024-05-01</td><td>{ ... }</td></tr>
+        <tr><td>2024-05-01</td><td>{ ... }</td></tr>
+        <tr><td>2024-05-02</td><td>{ ... }</td></tr>
+        <tr><td>...</td><td>...</td></tr>
+        </table>"]
+    end
 
-    D -.-> G[Hidden Schema]
-    E -.-> G
-    F -.-> G
+    A --> B --> L
 
-    G --> H{Manual Effort}
-    H --> I[Schema Discovery]
-    H --> J[Normalization]
-    H --> K[Materialized View Logic]
+    subgraph C[Challenges]
+        C1["🧩<br/><b>Schema Discovery</b><br/>What's inside the JSON?"]
+        C2["🔗<br/><b>Normalization</b><br/>Nested? Lists within lists?<br/>How to model?"]
+    end
 
-    I --> L[Slow Analytics]
-    J --> L
-    K --> L
+    L --> C1
+    L --> C2
 
-    style A fill:#EAF3FF,stroke:#0B1F3A,stroke-width:2px
-    style B fill:#F3E8FF,stroke:#4C1D95,stroke-width:2px
-    style G fill:#FFF7ED,stroke:#C2410C,stroke-width:2px
-    style H fill:#FEF2F2,stroke:#B91C1C,stroke-width:2px
-    style L fill:#DCFCE7,stroke:#166534,stroke-width:2px
+    C1 --> D["Semi-structured data is hard to analyze, query, and trust"]
+    C2 --> D
+
+    style A fill:#EAF3FF,stroke:#0B1F3A,stroke-width:2px,color:#0B1F3A
+    style B fill:#FFFFFF,stroke:#0B1F3A,color:#0B1F3A
+    style L fill:#F5F0FF,stroke:#6D28D9,stroke-width:2px,color:#0B1F3A
+    style T fill:#FFFFFF,stroke:#6D28D9,color:#0B1F3A
+    style C fill:#FFF7F7,stroke:#EF4444,stroke-width:2px,stroke-dasharray: 5 5,color:#0B1F3A
+    style C1 fill:#FFFFFF,stroke:#EF4444,color:#0B1F3A
+    style C2 fill:#FFFFFF,stroke:#EF4444,color:#0B1F3A
+    style D fill:#0B1F3A,stroke:#0B1F3A,color:#FFFFFF
