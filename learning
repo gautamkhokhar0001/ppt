@@ -1,0 +1,372 @@
+Create a single PowerPoint slide (16:9, 1920×1080) in the style of a Goldman Sachs internal engineering presentation.
+
+The slide should be minimal, professional, clean, and corporate, using lots of white space.
+
+Do NOT create a colorful infographic or marketing slide.
+
+Avoid gradients, glowing effects, decorative graphics, or 3D elements.
+
+Use only simple vector icons and clean typography.
+
+Overall Theme
+Background: White (#FFFFFF)
+Primary Color: Goldman Sachs Navy (#0B1F44)
+Secondary Color: Blue (#2B6CB0)
+Divider Lines: Light Gray (#E5E7EB)
+Borders: Very Light Blue (#D7E3F4)
+Accent Colors: Use original technology logo colors where appropriate (TypeScript blue, GitLab orange, etc.)
+Font: Aptos or Segoe UI
+Rounded corners: 8 px
+Soft shadows only
+Consistent spacing (24 px grid)
+Header
+
+Top Left
+
+Title
+
+Learnings
+
+Font
+
+Segoe UI Semibold
+
+30 pt
+
+Dark Navy (#0B1F44)
+
+Subtitle
+
+Technical depth and professional growth from building AutoLake end-to-end
+
+Font
+
+18 pt
+
+Gray (#6B7280)
+
+Below the subtitle draw a thin horizontal divider line.
+
+Slide Layout
+
+Create a two-column layout.
+
+Left side: 45%
+
+Right side: 55%
+
+Separate them using a thin vertical gray divider.
+
+LEFT COLUMN
+
+Section Heading
+
+Technical
+
+Font
+
+Segoe UI Bold
+
+26 pt
+
+Blue (#2B6CB0)
+
+Below the heading create a honeycomb (hexagonal) layout consisting of 12 hexagons.
+
+Each hexagon:
+
+White background
+Thin light-blue border
+Size approximately 110 × 100 px
+Small shadow
+Large technology icon centered
+Technology name below the icon
+
+Arrange them exactly like a honeycomb:
+
+      ○   ○   ○   ○
+
+    ○   ○   ○   ○
+
+      ○   ○   ○   ○
+Hexagon 1
+
+TypeScript
+
+Blue TS logo
+
+Label
+
+TypeScript
+
+Hexagon 2
+
+VS Code Extension
+
+Visual Studio Code logo
+
+Label
+
+VS Code Extension API
+
+Hexagon 3
+
+VS Code LM API
+
+Simple AI sparkle / assistant icon
+
+Label
+
+VS Code LM API
+
+Hexagon 4
+
+Legend Studio
+
+Legend Studio icon (or abstract semantic layer icon if unavailable)
+
+Label
+
+Legend Studio
+
+Hexagon 5
+
+GitLab
+
+Official GitLab logo
+
+Label
+
+GitLab
+
+Hexagon 6
+
+Legend Engine / Pure
+
+Simple cube or semantic model icon
+
+Label
+
+Legend Engine / Pure
+
+Hexagon 7
+
+Lakehouse
+
+Database icon
+
+Label
+
+Lakehouse
+
+Hexagon 8
+
+DynamoDB
+
+AWS DynamoDB icon
+
+Label
+
+DynamoDB
+
+Hexagon 9
+
+Agentic AI
+
+Robot with connected nodes
+
+Label
+
+Agentic AI
+
+Hexagon 10
+
+Prompt Engineering
+
+Chat bubble icon
+
+Label
+
+Prompt Engineering
+
+Hexagon 11
+
+Materialized Views
+
+Table/grid icon
+
+Label
+
+Materialized Views
+
+Hexagon 12
+
+Schema Normalization
+
+Entity relationship icon
+
+Label
+
+Schema Normalization
+
+Leave consistent spacing between every hexagon.
+
+The honeycomb should occupy the full left side without looking cramped.
+
+RIGHT COLUMN
+
+Heading
+
+Professional Growth
+
+Font
+
+Segoe UI Bold
+
+26 pt
+
+Blue (#2B6CB0)
+
+Create six professional learning cards stacked vertically.
+
+Each card should have:
+
+Circular icon on the left
+Bold heading
+One concise explanatory sentence
+Thin gray separator below each card
+Card 1
+
+Icon
+
+Developer tools
+
+Heading
+
+Building AI-Assisted Developer Tools
+
+Description
+
+Designed an end-to-end workflow that automates Lakehouse data product generation.
+
+Card 2
+
+Icon
+
+Database
+
+Heading
+
+Working with Enterprise Data Platforms
+
+Description
+
+Gained hands-on experience with Legend, Lakehouse architecture, Pure, and enterprise data modeling.
+
+Card 3
+
+Icon
+
+AI / Brain
+
+Heading
+
+AI Agent Design
+
+Description
+
+Built an intelligent agent capable of schema discovery, normalization, and Pure code generation from repository metadata.
+
+Card 4
+
+Icon
+
+People
+
+Heading
+
+Cross-Team Collaboration
+
+Description
+
+Worked with mentors and stakeholders to refine business requirements and improve developer workflows.
+
+Card 5
+
+Icon
+
+Lightbulb
+
+Heading
+
+Architectural Thinking
+
+Description
+
+Learned to transform manual engineering workflows into scalable and reusable platform solutions.
+
+Card 6
+
+Icon
+
+Code monitor
+
+Heading
+
+Product Mindset
+
+Description
+
+Focused on creating a seamless developer experience through a unified VS Code extension.
+
+Use 16–18 pt body text.
+
+Keep descriptions concise.
+
+Bottom Banner
+
+Create a full-width dark navy banner.
+
+Height approximately 70 px.
+
+Rounded corners.
+
+Left side
+
+Target icon
+
+Heading
+
+Key Takeaway
+
+Bold
+
+White
+
+Text
+
+This internship strengthened my understanding of enterprise data platforms, AI-assisted software engineering, semantic data modeling, and scalable developer tooling.
+
+Right side
+
+Visual Studio Code logo
+
+Text
+
+All capabilities were designed and integrated into a single VS Code Extension
+
+White text.
+
+Overall Visual Style
+
+The slide should resemble an internal engineering presentation from Goldman Sachs or Microsoft.
+
+It should communicate maturity and professionalism.
+
+Avoid decorative graphics.
+
+Use consistent alignment, equal spacing, and clean typography.
+
+The left side should visually summarize the technologies learned through recognizable icons, while the right side should clearly communicate the technical and professional skills developed during the internship.
+
+The final slide should feel polished, balanced, and suitable for presentation to engineering managers and senior leadership.
