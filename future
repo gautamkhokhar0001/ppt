@@ -1,0 +1,68 @@
+Create a single professional PowerPoint slide in 16:9 format, Goldman Sachs internal presentation style.
+
+Slide title:
+Future Scope
+
+Subtitle:
+Evolving AutoLake into an AI-Ready Semantic Data Platform
+
+Use a clean white background. Use dark navy (#0B1F44) for headings, medium blue (#1F5DAA) for accents, light blue (#F4F8FD) for panels, and light gray (#D9DEE7) for borders/dividers. Use Aptos or Segoe UI font. Avoid flashy icons, gradients, stock photos, or decorative graphics.
+
+Layout:
+Create a three-section slide.
+
+Left section:
+A large light-blue panel titled “AutoLake Today”.
+Inside, add four checkmark bullets:
+- Generates normalized relational tables
+- Generates Materialized Views
+- Creates Lakehouse Data Products
+- Publishes analytics-ready assets
+
+At the bottom of this panel, add a small italic note:
+Provides structured, analytics-ready enterprise data.
+
+Center section:
+Title it “Next Phase: Expanding Capabilities”.
+Create four stacked capability cards. Each card should have a small numbered blue square on the left and text on the right.
+
+Card 1:
+Semantic Enrichment
+- Add business descriptions to tables and columns
+- Generate business metadata automatically
+- Build semantic documentation
+
+Card 2:
+Intelligent Data Modeling
+- Generate relational mappings
+- Generate entity associations
+- Identify root entities using business context
+
+Card 3:
+Alloy Data Product Generation
+- Transform Lakehouse Data Products into Alloy Data Products
+- Preserve semantic relationships
+- Commit generated artifacts back to GitLab
+
+Card 4:
+Legend AI Integration
+- Publish Alloy Data Products to Legend AI
+- Enable Natural Language → Pure Query generation
+- Allow conversational analytics over enterprise data
+
+Right section:
+Create a slim roadmap panel titled “Roadmap”.
+Show three stages vertically:
+Today: Lakehouse Data Product
+↓
+Next: Alloy Data Product
+↓
+Future: Legend AI (Natural Language Analytics)
+
+Bottom:
+Create a full-width dark navy banner titled “Vision”.
+Text:
+AutoLake evolves from an automated data product generation platform into an AI-powered semantic data platform capable of enabling natural-language analytics through Legend AI.
+
+Design rules:
+Keep the slide text-heavy but clean and executive-friendly. Use only simple line icons if needed: checkmark, target, arrow. No colorful illustrations. Ensure all text is readable. Keep spacing balanced and aligned. The slide should look like a Goldman Sachs internal strategy/engineering roadmap slide.
