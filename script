@@ -1,0 +1,184 @@
+Full Presentation Script
+Slide 1 — Title
+
+Good morning everyone. Today I’ll be presenting my summer internship project, AutoLake: Agentic Data Product Generation.
+
+The goal of this project is to automate a manual data engineering workflow where semi-structured data in the Lakehouse is transformed into normalized, analytics-ready Lakehouse Data Products.
+
+At a high level, AutoLake takes schema information, existing Lakehouse metadata, and business use cases as input, and then uses an agent-driven workflow to generate normalized structures, Pure code, MatViews, and Lakehouse Data Product artifacts.
+
+The main idea is simple: we already have valuable business data in the Lakehouse, but it is not directly usable because it lands in a semi-structured format. AutoLake helps convert that raw data into trusted, reusable, queryable data products.
+
+Slide 2 — Agenda
+
+I’ll walk through the presentation in this order.
+
+First, I’ll give a quick business and data context, so the problem is clear even without knowing the internal data platform deeply.
+
+Then I’ll explain the challenge with semi-structured Lakehouse data, the current manual workflow, and why AutoLake is needed.
+
+After that, I’ll walk through the AutoLake pipeline, the end-to-end architecture, how I validated the agent using the Co-Invest onboarding dataset, the future scope, and finally my key learnings.
+
+So the flow is:
+
+Business context, problem, current process, AutoLake solution, architecture, validation, future scope, learnings, and questions.
+
+Slide 3 — Business & Private Bank Context
+
+Before going into AutoLake, I want to quickly explain the data context.
+
+In Private Bank Technology, many applications generate operational data as part of business workflows. This data can come from functional systems, and one example is DynamoDB.
+
+DynamoDB works well for application workloads because it stores operational data in a flexible format. But for analytics, reporting, and downstream data products, users need structured and well-modeled data.
+
+That is where the Lakehouse comes in.
+
+A Lakehouse can be thought of as the analytical layer where data from operational systems is ingested so that it can eventually be used for reporting, analytics, and data product generation.
+
+But simply ingesting data into the Lakehouse is not enough. The data needs to be transformed, modeled, normalized, and exposed through reusable assets like MatViews and Lakehouse Data Products.
+
+So the core business need is:
+
+We have valuable operational data, but we need to make it analytics-ready in a consistent and scalable way.
+
+Slide 4 — Challenges with Semi-Structured Lakehouse Data
+
+Now, the challenge starts with the way this data lands in the Lakehouse.
+
+Data from DynamoDB is ingested into the Lakehouse in a semi-structured format. A raw Lakehouse table may contain columns like an ID, an ingest date, and then a JSON blob.
+
+The important business data is inside that JSON blob.
+
+The problem is that the JSON blob can contain nested fields, arrays, child objects, and relationships. So even though the data exists in the Lakehouse, it is not directly usable for analytics.
+
+There are two main challenges here.
+
+First, schema discovery is manual and complex. Engineers need to understand what is inside the JSON blob by cross-referencing DynamoDB schema models and data model repositories.
+
+Second, semi-structured data cannot be directly queried in a clean analytical way. If the data is only present as JSON blobs, it becomes difficult to build reliable reports, dashboards, or business-facing queries.
+
+So the issue is not that data is missing. The issue is that the data is not structured in a way that makes it useful.
+
+Slide 5 — Current Manual Workflow
+
+Before AutoLake, this process was manual.
+
+An engineer would start by reading the DynamoDB schema models and Lakehouse schema definitions. Then they would analyze the raw JSON structure, infer the entities, understand relationships, decide how nested structures should be normalized, and then generate the required Pure code and MatViews.
+
+For example, if a JSON object contains a list inside another list, directly flattening everything into one table would not be a clean design. Instead, the engineer needs to identify parent-child relationships and create separate normalized tables.
+
+After that, MatViews need to be generated so that downstream users can query the transformed data efficiently.
+
+The challenge with this manual process is that it is time-consuming, repetitive, and error-prone.
+
+Every new dataset or use case requires engineers to repeat the same steps again:
+
+Analyze schemas, infer relations, normalize data, generate MatViews, and validate the output.
+
+This repetitive engineering workflow is the main automation opportunity that AutoLake addresses.
+
+Slide 6 — Why AutoLake / How It Works
+
+AutoLake automates this workflow through a VS Code extension.
+
+The user provides three main inputs.
+
+The first input is the DynamoDB schema models, which define the entities, keys, and JSON structure of the operational data.
+
+The second input is the Lakehouse schema tables, which provide the existing Lakehouse metadata and table information.
+
+The third input is the business use case, written in a Given-When-Then format. This helps the agent understand what business question needs to be answered and whether certain joins or summary views are required.
+
+Once these inputs are provided, the agent performs a sequence of steps.
+
+It first analyzes the schema models and JSON structure. Then it discovers entities and keys. After that, it normalizes nested structures into parent-child relational models. Then it generates Pure code and MatViews. Finally, it produces analytics-ready outputs such as normalized tables, Materialized Views, Summary MatViews, and Lakehouse Data Product artifacts.
+
+One important point here is that AutoLake is not just generating random code. It is trying to replicate the reasoning that an engineer would normally do manually: understanding the schema, identifying relationships, normalizing the data, and creating reusable analytical assets.
+
+So the key value of AutoLake is that it turns a manual data product generation workflow into an agent-assisted developer workflow inside VS Code.
+
+Slide 7 — End-to-End Architecture
+
+This slide shows the end-to-end architecture of the solution.
+
+The extension runs inside VS Code and acts as the developer interface. The developer provides the required repositories and business use cases.
+
+The agent uses the VS Code Language Model API to reason over the schema information, business context, and repository metadata. I chose the VS Code LM API because it keeps the solution lightweight and tightly integrated with the VS Code extension ecosystem, instead of adding an external orchestration framework.
+
+For external I/O, the workflow can use tools for operations like fetching GitLab repositories, reading schema files, handling generated artifacts, and preparing changes for review.
+
+A key design principle is that the agent does not directly write to production systems. It generates artifacts and keeps the workflow review-based. This means generated MatViews, Pure code, and data product artifacts can be reviewed before being merged.
+
+This makes the architecture safer and more aligned with enterprise development practices.
+
+So architecturally, AutoLake combines:
+
+A VS Code-native developer experience, an LLM-powered reasoning layer, schema and repository analysis, Pure and MatView generation, and a review-based artifact workflow.
+
+Slide 8 — Validation and Testing
+
+For validation, I used the Co-Invest onboarding dataset as a realistic test case.
+
+The objective was simple: check whether the AutoLake agent can generate correct MatViews for a real onboarding dataset.
+
+I used the Co-Invest onboarding dataset definitions from the ingest specification repository. This dataset was useful because it represents a realistic enterprise onboarding pipeline rather than a toy example.
+
+The agent processed the onboarding dataset definitions and generated MatViews for the relevant entities.
+
+After generation, I manually verified the output. The manual verification focused on whether the generated MatViews matched the expected structure and logic, whether the right entities were captured, and whether the output aligned with the onboarding flow.
+
+The validation flow was:
+
+Co-Invest onboarding dataset as input, AutoLake agent processing, generated MatViews as output, and then manual verification.
+
+The key result was that for the tested scope, the generated MatViews were manually verified and found to be correct.
+
+This validation gave confidence that the agent can work on realistic onboarding-style data and not just on a simplified example.
+
+Slide 9 — Future Scope
+
+The current version of AutoLake focuses on generating normalized relational tables, MatViews, summary MatViews, and Lakehouse Data Product artifacts.
+
+The future scope is to take this one step further.
+
+Once we have a Lakehouse Data Product, we can enrich it with semantic information. This means adding business descriptions to tables and columns, generating business mappings, defining associations between entities, and identifying root entities using business context.
+
+After this semantic enrichment, the Lakehouse Data Product can be transformed into an Alloy Data Product.
+
+Once an Alloy Data Product is created, it can be onboarded to Legend AI.
+
+This is important because Legend AI can enable natural-language querying over enterprise data. A user could ask a business question in natural language, Legend AI could generate the corresponding Pure query, and that query could run against the generated MatViews.
+
+So the future vision is:
+
+AutoLake should evolve from an automated data product generation tool into an AI-ready semantic data platform.
+
+In the long term, the same VS Code extension could support the full workflow:
+
+From semi-structured Lakehouse data, to normalized tables, to MatViews, to Lakehouse Data Products, to Alloy Data Products, and finally to Legend AI-powered natural language analytics.
+
+Slide 10 — Learnings
+
+This project gave me learnings across both technical and professional dimensions.
+
+On the technical side, I worked with TypeScript, VS Code extension APIs, VS Code LM APIs, GitLab repositories, DynamoDB schema models, Lakehouse concepts, Legend, Pure, MatViews, and schema normalization.
+
+I also learned how agentic workflows can be applied to real enterprise engineering problems. This was not just about prompting an LLM. It was about designing a workflow where the agent understands schema context, reasons over relationships, generates artifacts, and fits into a review-based developer process.
+
+On the professional side, one major learning was owning ambiguity. The project involved evolving requirements and multiple dependencies, so I had to scope the problem clearly and focus on delivering an MVP.
+
+Another key learning was architectural decision-making. For example, I chose the VS Code LM API instead of introducing LangGraph, because the project needed a lightweight, IDE-native solution that integrates naturally with the VS Code extension ecosystem.
+
+I also gained a better understanding of enterprise data platform development, especially around semantic modeling, Lakehouse architecture, Pure, and data product generation.
+
+Overall, this project strengthened my understanding of AI-assisted developer tooling, enterprise data platforms, and how to convert a manual engineering workflow into a scalable automation framework.
+
+Slide 11 — Questions
+
+That brings me to the end of the presentation.
+
+To summarize, AutoLake automates the journey from semi-structured Lakehouse data to normalized, analytics-ready data products.
+
+It reduces repetitive manual engineering effort, generates MatViews and Lakehouse Data Product artifacts, and creates a future path toward Alloy Data Products and Legend AI-based natural language analytics.
+
+Thank you for listening. I’m happy to take questions.
