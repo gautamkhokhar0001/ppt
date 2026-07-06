@@ -1,0 +1,9 @@
+Lakehouse:
+Lakehouse is an abstraction layer over Snowflake that stores, manages and controls access to data so users can consume trusted data without directly dealing with the underlying database complexity.
+
+Lakehouse Data Product:
+A Lakehouse Data Product is a curated and governed data offering created after data ingestion, which allows consumers to request access and use trusted Lakehouse data for analysis, reporting, or visualization.
+Data Product is the access point through which consumers can request and use curated Lakehouse data.
+
+Materialized View:
+A materialized view is a pre-created table-like result of a query, where transformed data is already stored so users can access it faster without running the full logic again.
