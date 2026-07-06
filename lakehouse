@@ -1,0 +1,45 @@
+Lakehouse is a firm-wide data platform that helps teams publish and consume trusted data for analytics.
+
+It sits on top of Snowflake and provides:
+
+Ingestion layer to bring data from source systems into Lakehouse
+Data Products to package datasets with ownership, metadata, schema, and access control
+Materialized Views to convert raw data into analytics-ready tables/views
+Governance layer to make data trusted, discoverable, and reusable
+Consumption layer for users to query data through SQL, dashboards, and reporting tools
+
+Key idea:
+Lakehouse makes raw source data usable for analytics by converting it into governed, structured, and queryable data products.
+
+Transition line at bottom:
+But when the source data is semi-structured, like DynamoDB JSON records, it is not immediately analytics-ready.
+
+Speaker Script
+
+“Lakehouse is a firm-wide data platform that helps teams bring data from different source systems and make it usable for analytics.
+
+Under the hood, Snowflake is used for storage and compute, but Lakehouse provides the platform layer on top of it. This platform layer handles ingestion, ownership, metadata, access control, governance, and consumption.
+
+The important concept here is that Lakehouse does not just store data. It tries to convert raw data into reusable Data Products. A Data Product is basically a properly packaged dataset with ownership, schema, metadata, and access rules.
+
+On top of these Data Products, we can create Materialized Views. A Materialized View is an analytics-ready transformed view of the data, which consumers can directly query for reporting or dashboarding.
+
+So, in an ideal case, Lakehouse helps convert raw source data into clean, structured, and queryable data.
+
+But this becomes challenging when the source is DynamoDB, because DynamoDB often stores data as semi-structured JSON-like records. These records may come into Lakehouse as JSON blobs, and those blobs cannot be directly queried like normal SQL columns. That is where the main challenge begins, which I will explain in the next slide.”
+
+Shorter Slide Version
+
+If slide has less space, write only this:
+
+Lakehouse is a firm-wide platform for trusted analytics data.
+
+Uses Snowflake underneath for storage and compute
+Ingests data from different producer systems
+Publishes governed Data Products
+Creates analytics-ready Materialized Views
+Provides ownership, metadata, access control, and discoverability
+Enables consumers to query trusted data using SQL/reporting tools
+
+Transition:
+Semi-structured DynamoDB data must be transformed before it becomes queryable in Lakehouse.
