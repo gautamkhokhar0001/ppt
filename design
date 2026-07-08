@@ -1,0 +1,313 @@
+Create a single professional PowerPoint slide in 16:9 widescreen format, 1920×1080 px.
+
+The slide should look like a polished Goldman Sachs internal engineering architecture slide: clean, technical, elegant, white background, dark navy typography, thin connector lines, minimal clutter, and one central “web-like” architecture diagram.
+
+Do not create a generic pipeline slide. The main design should be a circular / radial architecture diagram with the AutoLake VS Code Extension in the center and connected components around it.
+
+Use a clean enterprise design, not a colorful marketing infographic.
+
+Theme:
+- Background: white (#FFFFFF)
+- Primary navy: #061B49
+- Secondary blue: #0B5CAD
+- Light blue: #EAF3FF
+- Green for output/delivery: #2E7D32
+- Orange for human review gate: #D97706
+- Light gray lines: #D9DEE7
+- Dark gray body text: #374151
+- Section heading blue: #0B5CAD
+- Font: Aptos or Segoe UI
+- Main title: 32–36 pt, bold, dark navy
+- Subtitle: 15–17 pt, gray
+- Section labels: 12–14 pt, bold
+- Body labels: 9–11 pt
+- Keep all text readable but compact.
+- Use thin lines, rounded circles, rounded rectangles, and simple line icons.
+- No photographs.
+- No 3D effects.
+- No flashy gradients.
+- Use very subtle shadows only.
+
+Slide title:
+AutoLake Design Architecture
+
+Subtitle:
+A single artifact-driven architecture for onboarding DynamoDB services into Lakehouse
+
+Top right:
+Small text in red/dark maroon:
+PROPRIETARY & CONFIDENTIAL
+
+Bottom left:
+Goldman Sachs | Private Wealth Management
+
+Draw a thin horizontal navy line under the subtitle across most of the slide.
+
+Main architecture:
+Create one central dark navy circle in the middle of the slide.
+
+Central circle:
+- Fill: dark navy #061B49
+- White text
+- Circle diameter around 190–220 px
+- Inside include a small code window icon above the text.
+- Text:
+AutoLake VS
+Code Extension
+- Below in smaller text:
+Sequential artifact-driven
+workflow
+
+Around the central circle, create a radial / web-style architecture with eight numbered circular nodes connected around the center. Use dark navy connector lines. The flow should feel like a web around the central extension, not a straight pipeline.
+
+Each node should be a white circular card with navy outline and a simple line icon inside. Put a small numbered badge on the top-left of each circle. Use dark navy badges with white numbers, except the human review gate, which should use orange.
+
+Place these eight nodes around the center clockwise:
+
+1. Schema Ingest
+Position: upper-left / top of center.
+Icon: database with down arrow.
+Text near node:
+Schema Ingest
+clone repos &
+prepare run context
+
+2. Extractor
+Position: upper-right of center.
+Icon: code file.
+Text:
+Extractor
+parse Java +
+PURE definitions
+
+3. Confluence Ingest
+Position: right-upper side.
+Icon: chat/document bubble.
+Text:
+Confluence Ingest
+ingest business
+semantics
+
+4. Intermediate Mapping
+Position: right side.
+Icon: connected nodes / graph.
+Text:
+Intermediate Mapping
+map entities to
+Lakehouse tables
+
+5. Normalize
+Position: lower-right.
+Icon: table/grid.
+Text:
+Normalize
+derive PK/FK,
+parent-child,
+audit/latest
+
+6. User Review Gate
+Position: bottom center.
+This node should be highlighted in orange.
+Icon: user with checkmark.
+Use orange outline #D97706 and orange badge.
+Text:
+User Review Gate
+ER validation &
+human approval
+
+7. PURE & MatView Generation
+Position: lower-left.
+Icon: bar chart/code combination or code generation icon.
+Text:
+PURE & MatView
+Generation
+generate relation
+functions, MatViews,
+summary views
+
+8. Push to Repo / Create MR
+Position: left side.
+Icon: git branch / merge request.
+Text:
+Push to Repo /
+Create MR
+commit artifacts
+for review
+
+Connections:
+- Connect the eight nodes with curved or straight thin dark navy lines around the central circle, forming a circular workflow.
+- Also connect each node lightly to the central AutoLake circle.
+- Use small dots at connection points.
+- Show it as an artifact-driven web.
+- Add one dashed curved line around the left/top side from node 8 back toward node 1 to show iterative/sequential flow.
+- Use arrowheads sparingly but clearly.
+
+Left side Inputs section:
+Place on the far left side of the slide, vertically aligned.
+
+Heading:
+Inputs
+Color: #0B5CAD
+
+Show four input items stacked vertically, each with a circular icon and a short label. Use thin blue connector lines from these input items that merge into node 8 / the main architecture.
+
+Input item 1:
+Schema Models
+dataModelRepos
+Icon: database
+
+Input item 2:
+Ingest Spec Repo
+ingestSpecRepo
+Icon: folder
+
+Input item 3:
+Business Use Cases
+dataset
+use-case metadata
+Icon: group/users
+
+Input item 4:
+Context & Access
+Confluence links,
+credentials, branch
+metadata
+Icon: shield/check
+
+Draw blue curved connector lines from these input items into the architecture, merging at the left side near Push to Repo / Create MR or Schema Ingest.
+
+Bottom-left Runtime / Intelligence Services section:
+Place beneath the Inputs section, aligned along bottom-left.
+
+Heading:
+Runtime / Intelligence Services
+Color: #0B5CAD
+
+Create four small circular service nodes connected left-to-right with a thin blue line:
+1. VS Code LM API
+Icon: chip/AI
+2. Deterministic Extractors
+Icon: funnel/document
+3. LLM Sub-agents
+Icon: brain/network
+4. MCP Tools
+Icon: wrench/tools
+
+Connect this runtime services row into the main architecture near PURE & MatView Generation and Schema Ingest using a thin blue line.
+
+Right side Enterprise Integrations section:
+Place on the upper-right side.
+
+Heading:
+Enterprise Integrations
+Color: #1F3FB3 or #0B5CAD
+
+Create three circular integration nodes stacked vertically, connected from the architecture using a branching blue connector.
+
+Integration 1:
+GitLab
+Source control
+& merge requests
+Use GitLab logo or fox icon.
+
+Integration 2:
+Confluence
+Business context
+& documentation
+Use Confluence logo or abstract collaboration icon.
+
+Integration 3:
+Lakehouse /
+Legend
+Target storage &
+semantic layer
+Use database icon.
+
+Connect these integrations to nodes 2–4 and output side with thin blue branching connectors.
+
+Bottom-right Outputs & Delivery section:
+Place on the lower-right side. Use green as the dominant color.
+
+Heading:
+Outputs & Delivery
+Color: #2E7D32
+
+Create a horizontal row of five green circular output nodes connected left-to-right with green arrows/lines:
+
+1. Normalized ER Design
+Icon: ER diagram / connected boxes
+
+2. MatViews
+(entity / audit /
+latest)
+Icon: table
+
+3. Summary
+MatViews
+Icon: bar chart
+
+4. Review-ready
+PURE
+Artifacts
+Icon: code file
+
+5. Merge
+Request
+Icon: git merge icon
+
+Connect the architecture from the User Review Gate / PURE & MatView Generation area to this output row using a dashed green line.
+
+Bottom legend:
+At the bottom of the slide, above the footer, create four small rounded legend pills horizontally. Each should have a simple icon and label.
+
+Legend pill 1:
+Sequential pipeline
+Icon: connected nodes
+Border: light gray
+
+Legend pill 2:
+Artifact handoff
+Icon: circular arrows
+
+Legend pill 3:
+Human-in-the-loop approval
+Icon: person
+Use orange accent
+
+Legend pill 4:
+Review-based delivery
+Icon: shield/check
+Use navy accent
+
+Footer:
+Bottom-left:
+Goldman Sachs | Private Wealth Management
+Small, dark navy/black.
+Bottom-right:
+Slide number optional.
+
+Overall layout:
+- The central circle and radial architecture should dominate the slide.
+- Inputs are on the left.
+- Enterprise integrations are on the upper right.
+- Outputs are on the lower right.
+- Runtime services are on the lower left.
+- The slide should feel like one connected architecture web, not multiple disconnected diagrams.
+- Use ample whitespace.
+- Keep all labels short.
+- Avoid long paragraphs.
+- Keep consistent alignment and spacing.
+- Use clean thin connectors, rounded shapes, and professional icons.
+
+Important content accuracy:
+This slide describes the AutoLake onboarding architecture:
+- It runs as a VS Code Extension.
+- It is sequential and artifact-driven.
+- It uses Schema Ingest, Extractor, Confluence Ingest, Intermediate Mapping, Normalize, User Review Gate, PURE & MatView Generation, and Push to Repo / Create MR.
+- Inputs include schema model repos, ingest spec repo, business use cases, Confluence links, credentials, and branch metadata.
+- Runtime services include VS Code LM API, deterministic extractors, LLM sub-agents, and MCP tools.
+- Integrations include GitLab, Confluence, and Lakehouse/Legend.
+- Outputs include normalized ER design, MatViews, Summary MatViews, review-ready PURE artifacts, and merge request delivery.
+- Emphasize that this is human-reviewed and review-based, not direct production write.
+
+Make the final slide look elegant, balanced, and suitable for senior engineering managers.
