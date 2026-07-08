@@ -1,0 +1,527 @@
+Create a single professional PowerPoint slide in 16:9 landscape format.
+
+The slide should look like a Goldman Sachs internal engineering architecture slide: clean, structured, technical, and executive-ready.
+
+Do not make it flashy.
+Do not use gradients, cartoon illustrations, decorative stars, or marketing-style visuals.
+Use a white background, navy headings, thin grey borders, light blue panels, and simple line icons.
+
+Slide Title
+
+AutoLake Design Architecture
+
+Subtitle:
+
+Sequential artifact-driven VS Code extension workflow for onboarding DynamoDB services into Lakehouse
+
+Place the title at the top-left.
+
+Use:
+
+Title font: Aptos / Segoe UI Semibold, 34–38 pt
+Subtitle font: Aptos / Segoe UI, 16–18 pt
+Title color: dark navy #0B1F44
+Subtitle color: dark grey #555555
+
+Top-right small text:
+
+PROPRIETARY & CONFIDENTIAL
+
+Color: dark red #8B1E1E, 8–9 pt.
+
+Add a thin horizontal navy divider line below the subtitle.
+
+Overall Slide Layout
+
+Create a layered architecture layout with five labeled sections:
+
+1. User Entry Points & Inputs
+2. AutoLake Sequential Pipeline
+3. Runtime, Intelligence & Integrations
+4. Outputs & Delivery
+5. Governance & Operating Principles
+
+The main slide should have:
+
+Left/top area for IDE Host / user inputs
+Center large horizontal pipeline
+Right column for outputs
+Bottom strip for runtime/integrations
+Very bottom strip for governance principles
+
+Use clean rectangular cards with rounded corners.
+
+Section 0: IDE Host Label
+
+On the far left, create a small dark navy vertical or square box.
+
+Text:
+
+IDE Host:
+VS Code Extension
+
+Use the VS Code icon if available.
+
+Box style:
+
+Fill: dark navy #0B1F44
+Text: white
+Rounded corners
+Width around 120 px
+Height around 90 px
+
+Place it near the top-left under the title.
+
+Section 1: User Entry Points & Inputs
+
+Create a wide light-blue panel across the top-center.
+
+Header:
+
+1. USER ENTRY POINTS & INPUTS
+
+Header color: dark navy.
+
+Inside the panel, create four small cards horizontally:
+
+Card 1
+
+Icon: VS Code logo
+Text:
+VS Code Sidebar / Wizard
+
+Card 2
+
+Icon: chat bubble
+Text:
+Chat Entry Point
+
+Card 3
+
+Icon: document / checklist
+Text:
+Business Use Case Metadata
+
+Card 4
+
+Icon: database / repo icon
+Text:
+Repositories & Context
+
+Inside Card 4, show small pill labels:
+
+dataModelRepos
+ingestSpecRepo
+target/alloy repo
+branch metadata
+credentials
+Confluence links
+
+Panel style:
+
+Background: very light blue #F6FAFF
+Border: light blue-grey #D7E3F4
+Rounded corners
+Keep text readable and not too crowded.
+Section 2: AutoLake Sequential Pipeline
+
+This should be the main center section.
+
+Create a large light-green / white container with thin green border.
+
+Header inside container:
+
+2. AUTOLAKE SEQUENTIAL PIPELINE
+
+or inside the main container title:
+
+AutoLake Onboarding Agent
+
+Use a small robot icon beside the title.
+
+Container style:
+
+Background: very light green #F8FFF8 or white
+Border: green #2E7D32
+Rounded corners
+This container should occupy the majority of the slide width.
+
+Inside it, create a left-to-right pipeline of 10 numbered cards.
+
+Each card should be narrow, vertical, equal height, with a number circle at the top.
+
+Use arrows between cards.
+
+Pipeline Card 1
+
+Number: 1
+
+Title:
+
+Schema Ingest
+
+Icon: database / repository
+
+Bullets:
+
+Clones repos & collects run context
+Prepares run metadata
+Outputs schema-ingest.json
+Pipeline Card 2
+
+Number: 2
+
+Title:
+
+Extractor
+
+Icon: code file
+
+Bullets:
+
+Parses Java + Pure definitions
+Discovers Dynamo tables, bean classes, enums, Lakehouse tables
+Outputs extractor.json
+Pipeline Card 3
+
+Number: 3
+
+Title:
+
+Confluence Ingest
+
+Icon: Confluence logo or document icon
+
+Bullets:
+
+Consumes configured Confluence links
+Fetches business context
+Writes confluence-pages/*.md
+Pipeline Card 4
+
+Number: 4
+
+Title:
+
+Intermediate Mapping
+
+Icon: connected nodes
+
+Bullets:
+
+Maps source entities to Lakehouse tables
+Produces entity-table pairs
+Outputs intermediate-mapping.json
+Pipeline Card 5
+
+Number: 5
+
+Title:
+
+Normalize
+
+Icon: table / grid
+
+Bullets:
+
+Normalizes entities to relational tables
+Adds PK/FK, parent-child and audit/latest links
+Outputs normalize.json
+Pipeline Card 6
+
+Number: 6
+
+Title:
+
+User Review Gate
+
+Icon: person with check / approval
+
+This card should be visually highlighted with an orange border.
+
+Bullets:
+
+Renders ER model and design preview
+Human approval or refinement required
+Feedback can trigger re-normalization
+
+Add a small orange label at the bottom:
+
+HUMAN APPROVAL REQUIRED
+
+Style:
+
+Border: orange #D99000
+Light orange fill #FFF8E8
+Pipeline Card 7
+
+Number: 7
+
+Title:
+
+Pure Generation
+
+Icon: code brackets
+
+Bullets:
+
+Generates relation functions
+Generates MatView Pure specs
+Produces ingest artifacts
+Output folder pure-output/
+
+Use Pure, not SQL.
+
+Pipeline Card 8
+
+Number: 8
+
+Title:
+
+Summary MatView Generation
+
+Icon: bar chart
+
+Bullets:
+
+Generates reporting / summary MatViews
+Uses prior context and normalized model
+Outputs summary artifacts
+Pipeline Card 9
+
+Number: 9
+
+Title:
+
+Push to Repo
+
+Icon: git branch
+
+Bullets:
+
+Writes generated artifacts to target repo branch
+Commits and pushes changes
+Pipeline Card 10
+
+Number: 10
+
+Title:
+
+Create MR
+
+Icon: merge request / branch merge
+
+Bullets:
+
+Opens GitLab Merge Request
+Outputs MR URL / ID
+Artifact Handoff Row
+
+Below the 10 pipeline cards, create a second thin row showing the actual artifacts produced between stages.
+
+Use small pill-shaped boxes connected by arrows:
+
+schema-ingest.json
+→ extractor.json
+→ confluence-pages/*.md
+→ intermediate-mapping.json
+→ normalize.json
+→ approved design
+→ pure-output/
+→ summary artifacts
+→ pushed branch
+→ MR URL / ID
+
+This row should make it clear that the architecture is artifact-driven.
+
+Use:
+
+Pill background: white
+Border: light blue-grey
+Text: navy
+Small code-style font for filenames
+Section 3: Runtime, Intelligence & Integrations
+
+Below the main pipeline, create a horizontal panel.
+
+Header:
+
+3. RUNTIME, INTELLIGENCE & INTEGRATIONS
+
+Inside, create six cards horizontally:
+
+Card 1
+
+Icon: brain / AI
+Text:
+VS Code LM API
+
+Card 2
+
+Icon: magnifying glass / rules
+Text:
+Deterministic Extractors
+
+Card 3
+
+Icon: connected AI nodes
+Text:
+LLM Sub-agents
+
+Card 4
+
+Icon: tools / wrench
+Text:
+MCP Tools
+
+Card 5
+
+Icon: GitLab logo
+Text:
+GitLab
+
+Card 6
+
+Icon: Confluence logo
+Text:
+Confluence
+
+Under this row, add one italic sentence:
+
+Hybrid architecture: deterministic extraction + LLM-assisted transformation + review-based delivery
+
+Style:
+
+Background: very light blue #F6FAFF
+Border: #D7E3F4
+Header navy.
+Section 4: Outputs & Delivery
+
+On the right side of the slide, create a vertical panel titled:
+
+4. OUTPUTS & DELIVERY
+
+Inside, create five stacked output cards:
+
+Output 1
+
+Normalized ER Design
+
+Output 2
+
+MatViews
+entity / audit / latest
+
+Output 3
+
+Summary MatViews
+
+Output 4
+
+Review-ready Pure artifacts
+
+Output 5
+
+Merge Request for human review
+
+Use green icons where suitable:
+
+database
+table
+bar chart
+code file
+merge request
+
+Style:
+
+Panel background: very light blue-grey #F8FAFC
+Border: light blue-grey
+Output card background: white
+Thin borders
+Rounded corners.
+Section 5: Governance & Operating Principles
+
+At the bottom of the slide, create a full-width horizontal strip with four principles.
+
+Header:
+
+5. GOVERNANCE & OPERATING PRINCIPLES
+
+Create four equal blocks:
+
+Block 1
+
+Icon: shield
+Title: Sequential pipeline
+Text: Ordered stages ensure consistency and reproducibility.
+
+Block 2
+
+Icon: document
+Title: Artifact-driven handoff
+Text: Typed artifacts at every step enable traceability and reuse.
+
+Block 3
+
+Icon: person/check
+Title: Human-in-the-loop approval
+Text: Design validation and refinement before automation proceeds.
+
+Block 4
+
+Icon: lock / merge
+Title: Review-based integration
+Text: All changes delivered via MR for auditable, controlled merges.
+
+Style:
+
+Background: very light blue #F6FAFF
+Top border navy or grey
+Use simple navy icons.
+Visual Style Requirements
+
+Use the following style consistently:
+
+Background: white #FFFFFF
+Main title: dark navy #0B1F44
+Section headers: dark navy
+Primary accent: blue #1F5DAA
+Agent / transformation accent: green #2E7D32
+Review gate accent: orange #D99000
+Borders: light grey-blue #D7E3F4
+Text: black / dark grey
+Use Aptos, Segoe UI, or Calibri
+Use rounded rectangles
+Use thin arrows
+Use simple vector line icons
+Avoid heavy shadows
+Avoid gradients
+Avoid stock images
+Avoid decorative illustrations
+Avoid large paragraphs
+Key Message the Slide Must Convey
+
+The slide should clearly communicate that:
+
+AutoLake is a sequential, artifact-driven VS Code extension architecture where each stage consumes the previous stage’s output, produces a new artifact, and only proceeds to code generation after human review.
+
+It should show that the architecture is:
+
+IDE-native
+LLM-assisted
+deterministic where possible
+artifact-driven
+human-reviewed
+GitLab/MR based
+suitable for enterprise governance
+Footer
+
+Bottom-left:
+
+Goldman Sachs | Private Wealth Management
+
+Bottom-right:
+
+Slide number placeholder.
+
+Keep footer subtle and consistent with the rest of the deck.
