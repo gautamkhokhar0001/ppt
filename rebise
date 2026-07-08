@@ -1,0 +1,131 @@
+Revise the current AutoLake Design Architecture slide.
+
+The current slide is too cluttered, too small, and hard to read. Simplify it into one clean, professional architecture diagram. Keep the circular web idea, but reduce the number of nodes, remove tiny text, increase spacing, and make all labels readable.
+
+Use the same Goldman Sachs internal presentation style:
+- White background
+- Dark navy headings: #061B49
+- Blue accents: #0B5CAD
+- Green accents only for outputs: #2E7D32
+- Orange only for User Review Gate: #D97706
+- Light gray connector lines: #D9DEE7
+- Font: Aptos or Segoe UI
+- No gradients
+- No 3D effects
+- No flashy icons
+- No excessive small labels
+- Use simple line icons only
+- Keep the slide clean and executive-friendly
+
+Slide title:
+AutoLake Design Architecture
+
+Subtitle:
+Artifact-driven VS Code extension workflow for onboarding DynamoDB data into Lakehouse
+
+IMPORTANT:
+Do not create many small circles with unreadable text.
+Do not put text around the edges in all directions.
+Do not make the slide look like a dense mind map.
+Do not use tiny font.
+Do not use more than 6 main architecture stages.
+
+Create one central hub-and-spoke diagram.
+
+CENTER:
+Large dark navy circle in the middle.
+Text inside:
+AutoLake
+VS Code Extension
+
+Small subtitle inside:
+Artifact-driven agent workflow
+
+Around the center, create 6 large readable nodes in a circular web layout.
+
+Node 1: Inputs
+Text:
+Schema repos
+Ingest spec repo
+Business use cases
+Confluence context
+
+Node 2: Schema Understanding
+Text:
+Clone repositories
+Parse Java models
+Parse Pure definitions
+Extract Lakehouse tables
+
+Node 3: Mapping & Normalization
+Text:
+Map source entities
+Infer relationships
+Generate parent-child model
+
+Node 4: Human Review Gate
+Text:
+Review ER design
+Approve or refine
+Mandatory checkpoint
+Use orange border and orange accent.
+
+Node 5: Pure & MatView Generation
+Text:
+Generate Pure code
+Generate audit/latest MatViews
+Generate summary MatViews
+
+Node 6: Delivery
+Text:
+Push artifacts to GitLab
+Create merge request
+Review-ready output
+
+Connect all 6 nodes to the central AutoLake circle using thin navy connector lines.
+Also connect the 6 nodes sequentially using curved arrows around the circle:
+Inputs → Schema Understanding → Mapping & Normalization → Human Review Gate → Pure & MatView Generation → Delivery.
+
+LEFT SIDE:
+Add a compact “Inputs” panel with 4 bullets:
+- DynamoDB schema models
+- Lakehouse ingest specs
+- Business use cases
+- Confluence documentation
+
+RIGHT SIDE:
+Add a compact “Outputs” panel with 4 bullets:
+- Normalized ER design
+- MatViews
+- Summary MatViews
+- Review-ready Pure artifacts
+
+BOTTOM:
+Add a thin horizontal strip titled:
+Operating Principles
+
+Inside the strip, add 4 short items:
+- Sequential pipeline
+- Artifact handoff
+- Human-in-the-loop approval
+- Review-based delivery
+
+Footer:
+Goldman Sachs | Private Wealth Management
+
+Top-right:
+PROPRIETARY & CONFIDENTIAL
+
+Design requirements:
+- Main diagram should occupy the center of the slide.
+- Use only 6 main stages.
+- All node text must be readable from presentation mode.
+- Use large rounded rectangles or circular cards, not tiny bubbles.
+- Use consistent spacing.
+- Use clear arrows.
+- Avoid dense paragraphs.
+- Keep enough whitespace.
+- The final slide should explain the complete architecture in 30 seconds.
+
+The slide should communicate:
+AutoLake runs inside VS Code, takes schema repositories and business context as input, understands schemas, maps and normalizes data, pauses for human review, generates Pure and MatViews, and delivers artifacts through GitLab merge requests.
