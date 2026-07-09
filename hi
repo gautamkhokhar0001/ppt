@@ -1,0 +1,269 @@
+Create a professional Goldman Sachs-style 16:9 PowerPoint slide that exactly replicates the following design architecture layout.
+
+Slide title:
+“AutoLake Design Architecture”
+
+Subtitle:
+“A single artifact-driven architecture for onboarding DynamoDB services into Lakehouse”
+
+Top-right small text:
+“PROPRIETARY & CONFIDENTIAL”
+
+Use a clean white background. Use dark navy as the primary color, bright blue for inputs/runtime, green for outputs, orange for user review, and light grey divider lines. The design should look like an enterprise architecture diagram, not a simple flowchart.
+
+Use these approximate colors:
+- Dark navy: #001F4E
+- Medium blue: #0072CE
+- Light blue outline: #1683F3
+- Green: #2E7D32
+- Orange: #F37021
+- Light grey lines: #C9CED6
+- White background: #FFFFFF
+
+Use a serif font similar to Georgia or Times New Roman for the main title. Use a clean sans-serif font like Aptos or Arial for body text. Title should be large, bold, dark navy. Subtitle should be smaller, grey/dark navy.
+
+Layout:
+Place the title at the top left. Put the subtitle directly below it. Add a thin horizontal grey divider line under the subtitle across almost the full slide width. Keep the top-right proprietary text aligned to the top right.
+
+Main central element:
+In the exact center of the slide, create a large dark navy circular hub. Inside it, place a simple white code-window icon at the top. Below the icon, write:
+“AutoLake VS
+Code Extension”
+Then below it in smaller text:
+“Sequential artifact-driven
+workflow”
+
+The central hub should be surrounded by a thin circular ring. Around this central circle, place 8 numbered process nodes in a clockwise/sequential architecture flow. Each process node should be a white circle with a navy outline, a simple navy line icon inside, and a small dark navy numbered badge attached near the top-left edge of the circle.
+
+Numbered workflow nodes around the center:
+1. Top of central circle, slightly upper-left:
+Title: “Schema Ingest”
+Text: “clone repos &
+prepare run context”
+Icon: database with downward arrow.
+
+2. Upper-right of central circle:
+Title: “Extractor”
+Text: “parse Java +
+PURE definitions”
+Icon: document with code brackets.
+
+3. Right of central circle:
+Title: “Confluence Ingest”
+Text: “ingest business
+semantics”
+Icon: chat bubbles.
+
+4. Lower-right of central circle:
+Title: “Intermediate Mapping”
+Text: “map entities to
+Lakehouse tables”
+Icon: connected triangle/network nodes.
+
+5. Lower-right below step 4:
+Title: “Normalize”
+Text: “derive PK/FK,
+parent-child,
+audit/latest”
+Icon: table grid.
+
+6. Bottom-center below central hub:
+Title: “User Review Gate”
+Text: “ER validation &
+human approval”
+Use orange for this node. The node should have an orange outline, orange numbered badge, and orange user/check icon.
+
+7. Lower-left of central circle:
+Title: “PURE & MatView
+Generation”
+Text: “generate relation
+functions, MatViews,
+summary views”
+Icon: bar chart with upward arrow.
+
+8. Left of central circle:
+Title: “Push to Repo /
+Create MR”
+Text: “commit artifacts
+for review”
+Icon: Git branch.
+
+Connections around central workflow:
+Use smooth curved connectors, not straight messy arrows.
+
+- Connect step 1 to step 2 using a curved navy line that follows the outer ring clockwise.
+- Connect step 2 to step 3 using a short curved navy connector.
+- Connect step 3 to step 4 using a curved navy connector.
+- Connect step 4 to step 5 using a curved navy connector.
+- Connect step 5 to step 6 using a curved navy connector that bends downward toward the orange user review node.
+- Connect step 6 to step 7 using a dashed curved navy connector going left/upward.
+- Connect step 7 to step 8 using a curved navy connector.
+- Connect step 8 back toward step 1 using a large dashed curved loop on the left side of the central circle, going upward and around, showing the sequential lifecycle loop.
+- Also add small navy circular junction dots at key connection points around the central ring.
+
+Left-side inputs section:
+On the far left, create a vertical section titled “Inputs” in medium blue.
+
+Below it, create four input rows. Each row has text on the left and a circular icon on the right. The circles should have blue outlines and white fill. The four rows should be vertically aligned.
+
+Input 1:
+Bold label: “Schema Models”
+Small text: “dataModelRepos”
+Icon: database stack.
+
+Input 2:
+Bold label: “Ingest Spec Repo”
+Small text: “ingestSpecRepo”
+Icon: folder.
+
+Input 3:
+Bold label: “Business Use Cases”
+Small text: “dataset /
+use-case metadata”
+Icon: group of people.
+
+Input 4:
+Bold label: “Context & Access”
+Small text: “Confluence links,
+credentials, branch
+metadata”
+Icon: shield/check/key.
+
+Connections from Inputs:
+From each input icon circle, draw a smooth curved blue connector line toward a shared blue junction dot positioned between the left input section and step 8. Do not use straight lines. The four curved lines should converge cleanly into one shared blue dot. From this dot, draw a short curved connector into step 8 “Push to Repo / Create MR”. The curves should look like a neat bundled fan, not crossing each other.
+
+Bottom-left Runtime / Intelligence Services section:
+At the lower left, create a section titled “Runtime / Intelligence Services” in medium blue.
+
+Create a horizontal rounded rectangle container with a blue outline. Inside it, place four circular icon nodes connected left-to-right by thin blue lines.
+
+Node 1:
+“VS Code
+LM API”
+Icon: chip/AI processor.
+
+Node 2:
+“Deterministic
+Extractors”
+Icon: funnel/document.
+
+Node 3:
+“LLM
+Sub-agents”
+Icon: brain.
+
+Node 4:
+“MCP
+Tools”
+Icon: wrench.
+
+Connection from Runtime Services:
+From the MCP Tools node, draw a curved blue connector upward and right into step 7 “PURE & MatView Generation”. The connector should bend smoothly and should not cross the central circle. Add a small blue dot where it meets the workflow path.
+
+Right-side Enterprise Integrations section:
+On the upper-right side, create a section titled “Enterprise Integrations” in dark blue.
+
+Create three vertically stacked circular integration icons, each with blue/purple outline:
+1. GitLab icon
+Label: “GitLab”
+Small text: “Source control
+& merge requests”
+
+2. Confluence icon
+Label: “Confluence”
+Small text: “Business context
+& documentation”
+
+3. Lakehouse / Legend icon
+Label: “Lakehouse /
+Legend”
+Small text: “Target storage &
+semantic layer”
+
+Connections to Enterprise Integrations:
+From step 3 “Confluence Ingest”, draw a smooth curved blue/purple connector to a small junction dot on the right side. From that junction dot, draw three separate curved branch connectors to the three enterprise integration icons. The connectors should look like a clean branching tree with rounded curves, not straight lines. Each branch should enter the left side of each integration circle.
+
+Bottom-right Outputs & Delivery section:
+On the lower-right side, create a section titled “Outputs & Delivery” in green.
+
+Create five horizontally aligned green-outlined circular output nodes. Each circle has a simple green line icon and label underneath.
+
+Output 1:
+“Normalized
+ER Design”
+Icon: hierarchy/tree diagram.
+
+Output 2:
+“MatViews
+(entity / audit /
+latest)”
+Icon: table grid.
+
+Output 3:
+“Summary
+MatViews”
+Icon: bar chart.
+
+Output 4:
+“Review-ready
+PURE
+Artifacts”
+Icon: code document.
+
+Output 5:
+“Merge
+Request”
+Icon: Git branch.
+
+Connections inside Outputs:
+Connect the five output nodes left-to-right using green arrows. Use slightly curved or gently elbowed connectors, not harsh straight lines. Add arrowheads pointing from left to right.
+
+Connection from User Review Gate to Outputs:
+From step 6 “User Review Gate”, draw a dashed green curved arrow to Output 1 “Normalized ER Design”. This arrow should travel horizontally from the orange node toward the lower-right outputs section. It should be dashed and green, showing approved output delivery.
+
+Also draw a green top path above the output nodes:
+From Output 1, draw a green connector upward, then horizontally across the top of the outputs, then down into Output 5 “Merge Request”, showing final delivery flow. This should look like a rounded rectangular overhead route with arrowhead at Output 5.
+
+Central-to-node connection details:
+The central dark hub should have small navy connection dots around its ring. Some workflow nodes should connect into the central ring with short navy radial connectors:
+- Step 1 connects to top-left/top area of the hub ring.
+- Step 2 connects to upper-right area of the hub ring.
+- Step 3 connects to right area of the hub ring.
+- Step 4 connects to lower-right area of the hub ring.
+- Step 5 connects to lower-right/bottom area.
+- Step 7 connects to lower-left area.
+- Step 8 connects to left area.
+Use short curved or radial connector segments. Keep them clean and evenly spaced.
+
+Bottom legend:
+At the bottom center, above the footer line, create four small rounded legend cards with light grey borders. Each card has a small icon and text.
+
+Legend 1:
+Blue branching icon + “Sequential pipeline”
+
+Legend 2:
+Circular arrows icon + “Artifact handoff”
+
+Legend 3:
+Orange user icon + “Human-in-the-loop approval”
+
+Legend 4:
+Shield/check icon + “Review-based delivery”
+
+Footer:
+At the bottom left, add:
+“Goldman Sachs | Private Wealth Management”
+Use “Goldman Sachs” in bold dark navy and the rest in smaller grey/dark text.
+Add a thin grey horizontal line above the footer.
+
+Important design constraints:
+- Do not make this look like a random network diagram.
+- Do not use straight-line arrows everywhere.
+- Use curved connectors wherever lines travel between sections.
+- Avoid line crossings.
+- Keep all labels readable.
+- Keep spacing balanced.
+- The slide should look premium, minimal, and enterprise-grade.
+- Use icons inside circular nodes.
+- Keep the central AutoLake VS Code Extension circle as the dominant visual.
+- Maintain the exact left-to-right story: Inputs and Runtime services feed the AutoLake extension workflow; the workflow integrates with GitLab/Confluence/Lakehouse; after user review, outputs are produced and delivered as review-ready artifacts and merge request.
