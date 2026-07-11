@@ -1,0 +1,266 @@
+Create a 16:9 professional Goldman Sachs-style PowerPoint slide based on the uploaded reference image.
+
+The slide should be an editable PowerPoint architecture diagram, not a flat image. Use clean rounded rectangles, icons, arrows, file chips, section labels, and professional spacing.
+
+Slide title:
+“AutoLake LLD Design Architecture”
+
+Subtitle:
+“Internal modules, artifact contracts, and review flow inside the AutoLake VS Code Extension”
+
+Top-right small label:
+“PROPRIETARY & CONFIDENTIAL”
+
+Footer:
+Bottom-left: “Goldman Sachs | Private Wealth Management”
+
+Use a white background with a premium corporate design. Use dark navy for titles and structure, blue for internal module architecture, green for outputs, and orange for the user review gate.
+
+Color palette:
+Dark navy: #0B2A5B
+Blue: #1E78FF
+Light blue background: #F6FAFF
+Green: #2E8B57
+Orange: #F28C28
+Light grey borders: #D9E1EA
+
+Use a large dark navy title at the top-left. Add the subtitle below it in dark grey. Add a thin grey horizontal divider line below the subtitle across the slide.
+
+The slide should have three main horizontal architecture layers plus a right-side output panel and a bottom design-principles strip.
+
+SECTION 1: HLD / System Context
+
+Create a dark navy rounded section label on the left:
+“1  HLD / System Context”
+
+To the right of this label, create four horizontal rounded cards connected left-to-right with navy arrows.
+
+Card 1:
+Title: “Input Sources”
+Icon: database/document
+Bullets:
+- Schema Models
+- Ingest Spec Repo
+- Business Use Cases
+- Context & Access
+
+Card 2:
+Title: “AutoLake Extension”
+Icon: code window
+Bullets:
+- Workflow orchestration
+- Artifact handoff
+- Validation logic
+
+Card 3:
+Title: “Enterprise Integrations”
+Icon: puzzle/integration
+Bullets:
+- GitLab
+- Confluence
+- Lakehouse / Legend
+
+Card 4:
+Title: “Delivery Controls”
+Icon: shield/user
+Bullets:
+- Human review gate
+- Review-ready artifacts
+- Merge request publishing
+
+All four cards should be white with thin blue-grey borders, rounded corners, and simple navy line icons inside circular icon containers.
+
+SECTION 2: LLD / Internal Module Architecture
+
+Create a dark navy rounded section label on the left:
+“2  LLD / Internal Module Architecture”
+
+Create a large light-blue rounded rectangle container across the middle of the slide. Title centered at top of the container:
+“AutoLake VS Code Extension – Internal Processing Core”
+
+Inside this container, create a horizontal sequence of internal module cards. Each module card should be a white rounded rectangle with navy outline, a small navy numbered circle in the top-left corner, a simple navy icon, a title, a short responsibility, and a file artifact chip underneath.
+
+Connect the module cards using clean right-pointing navy arrows. Use neat spacing and avoid clutter.
+
+Module 1:
+Number: 1
+Title: “Run Context Builder”
+Icon: clipboard/settings
+Responsibility:
+“collect repo, branch,
+credentials, and
+execution metadata”
+Artifact chip under module:
+“run-context.yaml”
+
+Module 2:
+Number: 2
+Title: “Schema Extractor”
+Icon: document/code
+Responsibility:
+“parse Java entities
+and PURE definitions
+deterministically”
+Artifact chip:
+“extracted.json”
+
+Module 3:
+Number: 3
+Title: “Mapping Engine”
+Icon: connected nodes
+Responsibility:
+“convert extracted
+entities into target
+table mappings”
+Artifact chip:
+“intermediate-
+mapping.json”
+
+Module 4:
+Number: 4
+Title: “Normalization Engine”
+Icon: table grid
+Responsibility:
+“derive PK/FK,
+parent-child,
+audit/latest semantics”
+Artifact chip:
+“normalized.json”
+
+Module 5:
+Number: 5
+Title: “PURE Generator”
+Icon: code window
+Responsibility:
+“generate semantic
+model artifacts”
+Artifact chip:
+“pure-output.pure”
+
+Module 6:
+Number: 6
+Title: “MatView Generator”
+Icon: chart/table
+Responsibility:
+“generate entity, audit,
+latest, and summary
+MatViews”
+Artifact chip:
+“matview-output.pure”
+Add a secondary smaller dashed chip below it:
+“summary-matviews.pure”
+
+After Module 6, create a circular orange highlighted node:
+Title:
+“User Review
+Gate”
+Icon: user/check
+Subtitle:
+“ER validation +
+human approval”
+
+Connect Module 6 to the User Review Gate with a blue arrow. Connect User Review Gate to Module 7 with an orange arrow.
+
+Module 7:
+Number: 7
+Title: “MR Publisher”
+Icon: git branch
+Responsibility:
+“package review-ready
+artifacts and create
+merge request”
+Artifact chip:
+“merge-request.md”
+
+Add a small blue bracket label above Modules 1 to 4:
+“Deterministic extraction & transformation”
+
+Add another small blue bracket label above Modules 5 and 6:
+“LLM-assisted generation where semantics are needed”
+
+Each artifact chip should look like a small document-file label with a document icon, light blue fill, and blue outline. Use dotted vertical connector lines from each module card down to its artifact chip.
+
+RIGHT-SIDE OUTPUT PANEL
+
+On the right side of the middle section, create a green-accented panel titled:
+“Review-ready Outputs”
+
+Inside it, create four vertically stacked rounded output cards with green icons and green arrows pointing right.
+
+Output 1:
+“Normalized
+ER Design”
+Icon: ER/network diagram
+
+Output 2:
+“PURE
+Artifacts”
+Icon: code brackets
+
+Output 3:
+“MatViews”
+Icon: bar chart
+
+Output 4:
+“Merge
+Request”
+Icon: git branch
+
+Use green outlines, white fill, and simple green icons. Separate this output panel from the internal module container using a thin vertical dotted grey line.
+
+SECTION 3: Artifact Contract Layer
+
+Create a dark navy rounded section label on the left:
+“3  Artifact Contract Layer”
+
+To the right, create a horizontal row of small file cards connected with navy arrows.
+
+File sequence:
+run-context.yaml → extracted.json → intermediate-mapping.json → normalized.json → pure-output.pure → matview-output.pure → merge-request.md
+
+Each file should be shown as a small rounded document chip with a document icon. Keep the row aligned directly below the internal module architecture.
+
+Under the row, add the caption:
+“Each module consumes the previous contract file, enriches it, and emits the next traceable artifact.”
+
+BOTTOM DESIGN PRINCIPLES STRIP
+
+At the bottom, above the footer line, create four wide rounded cards.
+
+Card 1:
+Icon: code/magnifier
+Title: “Deterministic-first parsing”
+Text:
+“Repeatable, rule-based extraction
+for reliability and traceability.”
+
+Card 2:
+Icon: document/shield
+Title: “Artifact-driven contracts”
+Text:
+“Every stage emits a reviewable artifact
+as a clear contract.”
+
+Card 3:
+Icon: orange user
+Title: “Human-in-the-loop approval”
+Text:
+“ER validation and business approval
+ensure semantic correctness.”
+
+Card 4:
+Icon: shield/check
+Title: “Review-based delivery”
+Text:
+“Deliver safe, auditable changes
+through merge requests.”
+
+Make the slide look premium, clean, and professional. Use consistent alignment, equal spacing, rounded cards, thin borders, subtle shadows, and clear hierarchy.
+
+Important:
+Do not make this look like a generic simple flowchart.
+Do not overcrowd the slide.
+Keep all text readable.
+Use editable PowerPoint shapes and icons.
+The main message should be:
+AutoLake is internally designed as modular processing stages, where each module emits a validated artifact contract that feeds the next module, ending in human-reviewed and merge-request-based delivery.
