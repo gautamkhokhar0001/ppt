@@ -1,0 +1,16 @@
+The AutoLake pipeline follows a sequential, artifact-driven workflow where each stage consumes the output of the previous stage and produces a validated intermediate artifact.
+
+Schema Extraction Stage
+The pipeline begins by parsing the Java entities, DynamoDB schema models, and PURE definitions from the source repositories. This deterministic extraction stage generates an intermediate artifact named extracted.json, which contains the complete extracted schema metadata.
+Intermediate Mapping Stage
+Using the extracted schema information, the mapping engine identifies how the source entities should be represented in the Lakehouse. The output of this stage is intermediate_mapping.json, which stores entity-to-table mappings and structural relationships.
+Normalization Stage
+The extracted.json and intermediate_mapping.json artifacts are jointly consumed by the normalization engine. During this stage, business rules are applied to derive primary keys, foreign keys, parent-child relationships, audit/latest semantics, and other normalization logic. The resulting artifact is normalized.json, which represents the finalized normalized data model.
+ER Validation Stage
+The normalized model is rendered as an Entity Relationship (ER) Diagram and presented to the user for validation. This human review step allows semantic verification and approval before any code generation begins.
+Normalized MatView Generation
+After approval, the LLM receives both normalized.json and extracted.json as context. Using these validated artifacts, it generates the required normalized MatViews and associated PURE artifacts.
+Summary MatView Generation
+To generate business-specific summary views, the LLM is additionally provided with the business use case, along with normalized.json and extracted.json. Using this combined context, it generates the required Summary MatViews.
+Merge Request Generation
+Finally, all generated PURE artifacts, normalized MatViews, and Summary MatViews are packaged together, and an automated Merge Request (MR) is created for review and deployment.
