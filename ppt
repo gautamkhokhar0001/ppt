@@ -1,0 +1,767 @@
+Create exactly one fully editable 16:9 PowerPoint slide that closely replicates the attached reference image.
+
+The slide must be built with native PowerPoint shapes, editable text boxes, Office icons, artifact chips, dashed callout boxes, and editable arrow connectors. Do not place the reference image as the slide background. Do not simplify the architecture into a straight horizontal pipeline.
+
+The design must look like a polished Goldman Sachs enterprise architecture slide: white canvas, dark navy typography, restrained blue, orange and purple accents, thin borders, generous whitespace, subtle shadows, and precise alignment.
+
+==================================================
+1. SLIDE FORMAT AND VISUAL STYLE
+==================================================
+
+Slide size:
+- Widescreen 16:9.
+- Landscape orientation.
+- One slide only.
+
+Background:
+- Predominantly white.
+- Add an extremely subtle pale-blue radial glow behind the central architecture diagram.
+- The glow should start near the Normalize card and fade out before reaching the slide edges.
+- Do not use a visible gradient that makes the background look blue.
+- Keep the background premium, clean and nearly white.
+
+Primary colors:
+- Dark navy text and arrows: #072A63
+- Deterministic blue: #1768D5
+- Light deterministic fill: #F5F9FF
+- Human-review orange: #F25A0A
+- Light orange fill: #FFF8F2
+- AI-generation purple: #6A24B8
+- Light purple fill: #FBF7FF
+- Neutral grey text: #43516A
+- Light card border grey: #D9E2F0
+- Light divider line: #AABBD4
+
+Typography:
+- Main title: Georgia, Cambria, or a similar elegant serif font.
+- All other text: Aptos, Arial, or a similar clean sans-serif font.
+- Use consistent line spacing and avoid condensed fonts.
+
+Card styling:
+- White fill.
+- Thin 1.25 to 1.5 pt border.
+- Large rounded corners, approximately 14–18 pt radius.
+- Very subtle soft shadow below and slightly to the right.
+- No heavy gradients.
+- No 3D bevel effects.
+- Icons should use outline or simple flat vector styling.
+
+Connector styling:
+- Use dark navy connectors for deterministic artifact flow.
+- Use orange connectors leaving the human-review stage.
+- Use purple connectors for AI-generated artifacts and merge-request convergence.
+- Use filled triangular arrowheads.
+- Use elbow connectors with neat 90-degree bends wherever branches merge or split.
+- Keep connector thickness around 1.5–2 pt.
+- All bends should be deliberate and symmetrical.
+- Do not allow connectors to cross through cards.
+- Do not use random diagonal connectors where a clean elbow route is possible.
+
+==================================================
+2. HEADER
+==================================================
+
+Place the main title at the upper-left, approximately:
+- X: 2.5% of slide width
+- Y: 1.8% of slide height
+- Width: 62%
+- Height: 6%
+
+Title text:
+“AutoLake LLD Design Architecture”
+
+Title styling:
+- Dark navy.
+- Large serif font.
+- Approximately 29–34 pt.
+- Semi-bold or bold.
+- Keep it on one line.
+
+Place the subtitle directly beneath the title:
+“Internal module interactions and artifact flow inside the AutoLake VS Code Extension”
+
+Subtitle styling:
+- Dark grey-blue.
+- Sans-serif.
+- Approximately 16–18 pt.
+- Regular weight.
+- Left aligned with the title.
+
+Place the confidentiality label at the upper-right:
+“PROPRIETARY & CONFIDENTIAL”
+
+Confidentiality styling:
+- Dark navy.
+- Sans-serif.
+- Bold.
+- Approximately 9–11 pt.
+- All caps.
+- Align close to the right slide margin.
+
+Add a thin horizontal divider line beneath the subtitle:
+- Start around X = 2.5%.
+- End around X = 95%.
+- Place around Y = 11%.
+- Use a thin muted blue-grey line.
+- Add a short, thicker navy accent segment at the far-left end of the divider, approximately 7–8% of slide width.
+
+==================================================
+3. OVERALL ARCHITECTURE COMPOSITION
+==================================================
+
+The architecture must form a wide, symmetrical dependency web rather than a straight pipeline.
+
+The visual shape should be:
+
+Top row:
+Schema Ingest → Intermediate Mapping
+
+Both top modules feed:
+Normalize
+
+Normalize feeds:
+ER Review Gate
+
+ER Review Gate splits into:
+Normalized MatViews and Summary MatViews
+
+Both MatView branches converge into:
+MR Generation
+
+Artifact chips must appear directly beneath the module that produces them.
+
+Keep the diagram centred horizontally and use the full available slide width.
+
+Maintain these approximate vertical levels:
+
+- Top modules: 14%–25% of slide height.
+- Top artifact chips: 26%–31%.
+- Normalize: 34%–46%.
+- Normalized artifact chip: 47%–51%.
+- ER Review Gate: 53%–63%.
+- MatView modules: 66%–77%.
+- MatView artifact chips: 78%–82%.
+- MR Generation: 84%–93%.
+- MR artifact chip: directly beneath MR Generation.
+- Footer line: around 97%.
+
+==================================================
+4. STEP 1 — SCHEMA INGEST
+==================================================
+
+Position:
+- Upper-left part of the architecture.
+- Approximately X = 18%, Y = 14%.
+- Width approximately 20%.
+- Height approximately 10%.
+
+Create a wide rounded module card.
+
+Attach a blue numbered circular badge overlapping its top-left border:
+“1”
+
+Badge styling:
+- Solid deterministic blue.
+- White number.
+- Approximately 26–30 px diameter.
+- The badge should overlap the card edge by roughly one-third.
+
+Inside the left side of the card:
+- Add a circular pale-blue icon container.
+- Place a blue database stack plus document icon inside.
+- The icon should visually suggest schema ingestion or schema parsing.
+
+Card text:
+Title:
+“Schema Ingest”
+
+Description:
+“Ingest schemas and
+parse source models”
+
+Text hierarchy:
+- Title: bold dark navy, approximately 14–16 pt.
+- Description: dark grey-blue, approximately 10–11 pt.
+- Keep text left aligned.
+- Place the icon on the left and text on the right.
+
+Left-side callout:
+Place a small dashed rounded rectangle to the left of the Schema Ingest card.
+
+Callout text:
+“Deterministic
+parsing from
+source repos”
+
+Callout styling:
+- White or very pale-blue fill.
+- Blue dashed border.
+- Blue text.
+- Approximately 8–9 pt.
+- Centre aligned.
+- Rounded corners.
+
+Connect the callout to the left edge of the Schema Ingest card using:
+- A thin blue dashed horizontal connector.
+- No arrowhead.
+- The connector should meet the card around its vertical centre.
+
+Artifact chip beneath Schema Ingest:
+Text:
+“extractor.json”
+
+Design:
+- Small rounded rectangle.
+- Pale-blue fill.
+- Thin blue border.
+- Blue document icon on the left.
+- Filename in bold dark blue.
+- Approximately 13% slide width.
+- Height approximately 4%.
+
+Connection:
+- From the bottom centre of the Schema Ingest card, draw a short straight vertical navy connector to the top centre of the artifact chip.
+- No arrowhead is required on this short producer-to-artifact line.
+
+==================================================
+5. STEP 2 — INTERMEDIATE MAPPING
+==================================================
+
+Position:
+- Upper-right part of the architecture.
+- Approximately X = 50%, Y = 14%.
+- Width approximately 23%.
+- Height approximately 10%.
+- Match the height of the Schema Ingest card.
+
+Create a wide rounded module card with the same styling as Step 1.
+
+Attach a blue numbered badge overlapping its top-left border:
+“2”
+
+Inside the left side:
+- Add a circular pale-blue icon container.
+- Use a connected-node or mapping-network icon in blue.
+
+Card text:
+Title:
+“Intermediate Mapping”
+
+Description:
+“Map extracted entities
+to target structures”
+
+Right-side callout:
+Place a dashed blue rounded callout box to the right of the card.
+
+Callout text:
+“Table mappings
+and structural
+relationships”
+
+Connect the right edge of the Intermediate Mapping card to the callout using:
+- Thin blue dashed horizontal connector.
+- No arrowhead.
+- The line should meet both shapes at their vertical centres.
+
+Artifact chip beneath Intermediate Mapping:
+Text:
+“intermediate_mapping.json”
+
+Design:
+- Pale-blue rounded file chip.
+- Blue document icon.
+- Dark-blue filename.
+- Slightly wider than the extractor.json chip because the filename is longer.
+
+Connection:
+- Short vertical navy connector from the bottom centre of the module card to the top centre of the artifact chip.
+- No arrowhead.
+
+==================================================
+6. CONNECTION FROM STEP 1 TO STEP 2
+==================================================
+
+Draw one straight horizontal navy arrow from Schema Ingest to Intermediate Mapping.
+
+Exact routing:
+- Start at the centre-right edge of the Schema Ingest card.
+- End at the centre-left edge of the Intermediate Mapping card.
+- Keep the line perfectly horizontal.
+- Use a filled navy arrowhead at the destination.
+- Do not route this arrow through either artifact chip.
+- Keep it visually above the artifact chips and aligned with the vertical centres of both cards.
+
+==================================================
+7. STEP 3 — NORMALIZE
+==================================================
+
+Position:
+- Centre of the slide below Steps 1 and 2.
+- Approximately X = 35%, Y = 35%.
+- Width approximately 22%.
+- Height approximately 11%.
+
+Create a rounded deterministic-blue module card.
+
+Attach a blue numbered badge overlapping the upper-left border:
+“3”
+
+Inside the left side:
+- Add a pale-blue circular icon area.
+- Use a blue table-grid icon.
+
+Card text:
+Title:
+“Normalize”
+
+Description:
+“Apply PK/FK rules,
+parent-child, audit/latest
+semantics and business rules”
+
+Use three compact description lines.
+
+Artifact inputs entering Normalize:
+
+A. From extractor.json:
+- Start at the bottom centre of the extractor.json chip.
+- Draw a short vertical navy segment downward.
+- Bend right at 90 degrees.
+- Continue horizontally toward the upper-left region above Normalize.
+- Bend downward at 90 degrees.
+- Enter the upper-left section of the Normalize card.
+- Add a filled navy arrowhead where it enters the Normalize card.
+
+B. From intermediate_mapping.json:
+- Start at the bottom centre of the intermediate_mapping.json chip.
+- Draw a short vertical navy segment downward.
+- Bend left at 90 degrees.
+- Continue horizontally toward the upper-right region above Normalize.
+- Bend downward at 90 degrees.
+- Enter the upper-right section of the Normalize card.
+- Add a filled navy arrowhead where it enters the Normalize card.
+
+The two connectors must:
+- Be symmetrical.
+- Form a clean converging bracket shape.
+- Never cross.
+- Enter Normalize at separate left and right points.
+- Clearly communicate that Normalize consumes both files.
+
+Right-side callout:
+Place a dashed blue rounded rectangle to the right of Normalize.
+
+Callout text:
+“Creates normalized
+data model with
+consistent semantics”
+
+Connect:
+- Use a thin blue dashed horizontal connector from the right edge of Normalize to the callout.
+- No arrowhead.
+
+Artifact chip beneath Normalize:
+Text:
+“normalized.json”
+
+Design:
+- Pale-blue file chip.
+- Blue document icon.
+- Dark-blue bold filename.
+
+Connection:
+- Short straight vertical navy connector from the bottom centre of Normalize to the top centre of normalized.json.
+- No arrowhead.
+
+==================================================
+8. STEP 4 — ER REVIEW GATE
+==================================================
+
+Position:
+- Directly below normalized.json.
+- Approximately X = 37%, Y = 53%.
+- Width approximately 19%.
+- Height approximately 10%.
+
+Create a rounded card with:
+- White or very pale-orange fill.
+- Thin orange border.
+- Slightly more visual emphasis than the other cards.
+
+Attach an orange numbered circular badge overlapping the upper-left border:
+“4”
+
+Inside the left side:
+- Add a circular pale-orange icon background.
+- Use an orange user/person icon with an approval checkmark.
+
+Card text:
+Title:
+“ER Review Gate”
+
+Description:
+“Render ER diagram
+for user validation
+and approval”
+
+Title styling:
+- Orange.
+- Bold.
+- Approximately 14–16 pt.
+
+Input connector:
+- Start at the bottom centre of the normalized.json artifact chip.
+- Draw a perfectly vertical navy arrow downward.
+- End at the top centre of the ER Review Gate.
+- Use a filled navy arrowhead at the ER Review Gate.
+- Do not bend this arrow.
+
+Right-side callout:
+Place a pale-orange dashed rounded rectangle to the right of the ER Review Gate.
+
+Callout text:
+“Human-in-the-loop
+validation before
+artifact generation”
+
+Callout styling:
+- Orange text.
+- Orange dashed border.
+- Very pale-orange fill.
+- Approximately 8–9 pt.
+
+Connect:
+- Use a thin orange dashed horizontal connector.
+- Start at the right centre of the ER Review Gate.
+- End at the left centre of the callout.
+- No arrowhead.
+
+==================================================
+9. STEP 5 — NORMALIZED MATVIEWS
+==================================================
+
+Position:
+- Lower-left branch beneath the ER Review Gate.
+- Approximately X = 24%, Y = 66%.
+- Width approximately 21%.
+- Height approximately 10%.
+
+Create a rounded AI-generation card:
+- White or extremely pale-purple fill.
+- Thin purple border.
+- Subtle shadow.
+
+Attach a purple numbered badge overlapping the upper-left border:
+“5”
+
+Inside the left side:
+- Add a pale-purple circular icon container.
+- Use a purple code-brackets icon.
+
+Card text:
+Title:
+“Normalized MatViews”
+
+Description:
+“LLM generates normalized
+MatViews using normalized
+model + extracted schema”
+
+Title:
+- Bold purple or dark navy-purple.
+
+Left-side callout:
+Place a dashed purple rounded rectangle to the left of the module.
+
+Callout text:
+“Uses
+normalized.json +
+extractor.json”
+
+Connect:
+- Thin purple dashed horizontal connector.
+- No arrowhead.
+- Align callout and card around their vertical centres.
+
+Artifact chip beneath:
+Text:
+“normalized_matviews.pure”
+
+Design:
+- Pale-purple fill.
+- Thin purple border.
+- Purple document icon.
+- Purple filename.
+- Width sufficient to keep the filename on one line.
+
+==================================================
+10. STEP 6 — SUMMARY MATVIEWS
+==================================================
+
+Position:
+- Lower-right branch beneath the ER Review Gate.
+- Approximately X = 50%, Y = 66%.
+- Width approximately 21%.
+- Height approximately 10%.
+- Match Step 5 in size and vertical alignment.
+
+Create a matching purple AI-generation card.
+
+Attach a purple numbered badge:
+“6”
+
+Inside the left side:
+- Add a pale-purple circular icon container.
+- Use a purple analytics/bar-chart icon.
+
+Card text:
+Title:
+“Summary MatViews”
+
+Description:
+“LLM generates summary
+MatViews using use case +
+normalized + extracted”
+
+Right-side callout:
+Place a dashed purple rounded rectangle to the right.
+
+Callout text:
+“Uses use case +
+normalized.json +
+extractor.json”
+
+Connect:
+- Thin purple dashed horizontal line.
+- No arrowhead.
+
+Artifact chip beneath:
+Text:
+“summary_matviews.pure”
+
+Use the same styling as normalized_matviews.pure.
+
+==================================================
+11. BRANCHING FROM ER REVIEW GATE TO STEPS 5 AND 6
+==================================================
+
+Create two orange elbow arrows leaving the bottom of the ER Review Gate.
+
+Left branch:
+- Start near the lower-left portion of the ER Review Gate.
+- Draw a short vertical orange segment downward.
+- Bend left at 90 degrees.
+- Continue horizontally until aligned with the top centre of Normalized MatViews.
+- Bend downward.
+- Enter the top centre of Normalized MatViews.
+- Add an orange filled arrowhead.
+
+Right branch:
+- Start near the lower-right portion of the ER Review Gate.
+- Draw a short vertical orange segment downward.
+- Bend right at 90 degrees.
+- Continue horizontally until aligned with the top centre of Summary MatViews.
+- Bend downward.
+- Enter the top centre of Summary MatViews.
+- Add an orange filled arrowhead.
+
+Requirements:
+- Keep both branches symmetrical.
+- The horizontal portions should appear at the same Y position.
+- Do not overlap the cards.
+- Do not create diagonal arrows.
+- The split should clearly indicate that user approval enables both AI-generation branches.
+
+==================================================
+12. STEP 7 — MR GENERATION
+==================================================
+
+Position:
+- Bottom-centre of the architecture.
+- Approximately X = 37%, Y = 84%.
+- Width approximately 19%.
+- Height approximately 9%.
+
+Create a rounded purple AI-generation card.
+
+Attach a purple numbered badge overlapping the upper-left border:
+“7”
+
+Inside the left side:
+- Add a pale-purple circular icon container.
+- Use a purple Git branch or merge-request icon.
+
+Card text:
+Title:
+“MR Generation”
+
+Description:
+“Package PURE artifacts and
+create automated merge
+request”
+
+Right-side callout:
+Place a dashed purple rounded rectangle to the right.
+
+Callout text:
+“Creates MR with all
+generated artifacts
+for review & delivery”
+
+Connect:
+- Thin purple dashed horizontal connector.
+- No arrowhead.
+
+Artifact chip beneath MR Generation:
+Text:
+“merge_request.md”
+
+Use:
+- Pale-purple fill.
+- Purple border.
+- Purple document icon.
+- Bold purple filename.
+
+Connect:
+- Short vertical purple line from the bottom centre of MR Generation to the top centre of merge_request.md.
+- No arrowhead.
+
+==================================================
+13. CONVERGING MATVIEW ARTIFACTS INTO MR GENERATION
+==================================================
+
+Connect both generated MatView artifact chips to MR Generation.
+
+Left artifact route:
+- Start at the bottom centre of normalized_matviews.pure.
+- Draw a short vertical purple segment downward.
+- Bend right at 90 degrees.
+- Continue horizontally toward the central convergence point directly above MR Generation.
+- Bend downward at the convergence point.
+
+Right artifact route:
+- Start at the bottom centre of summary_matviews.pure.
+- Draw a short vertical purple segment downward.
+- Bend left at 90 degrees.
+- Continue horizontally toward the same central convergence point.
+
+At the convergence:
+- The two paths should meet symmetrically at one central junction above MR Generation.
+- From this junction, draw one short vertical purple arrow downward into the top centre of MR Generation.
+- Add a filled purple arrowhead where it enters MR Generation.
+
+Requirements:
+- The convergence should form a clean, shallow “U” or bracket shape.
+- Do not let the two arrows cross.
+- Keep both horizontal portions at the same Y position.
+- The central vertical arrow must align exactly with the horizontal centre of MR Generation.
+
+==================================================
+14. LEGEND
+==================================================
+
+Place a compact legend box in the lower-left empty area.
+
+Approximate position:
+- X = 3%.
+- Y = 78%.
+- Width = 14%.
+- Height = 16%.
+
+Design:
+- White fill.
+- Thin muted-blue border.
+- Rounded corners.
+- Very subtle shadow.
+- Keep it visually secondary.
+
+Legend title:
+“LEGEND”
+
+Use bold dark navy uppercase text.
+
+Legend items, vertically stacked:
+
+1. Blue filled circle:
+“Deterministic Modules”
+
+2. Orange filled circle:
+“Human Validation”
+
+3. Purple filled circle:
+“AI-assisted Generation”
+
+4. Small blue document icon:
+“Artifact Produced”
+
+Use approximately 9–10 pt body text.
+Align icons and text neatly.
+Keep equal spacing between each item.
+
+==================================================
+15. FOOTER
+==================================================
+
+Add a thin navy horizontal footer line approximately 1.5–2% above the bottom edge.
+
+At the lower-left beneath the line, place:
+“Goldman Sachs”
+
+Styling:
+- Dark navy serif.
+- Bold.
+- Approximately 13–15 pt.
+
+Place a thin vertical separator after Goldman Sachs.
+
+Then place:
+“Private Wealth Management”
+
+Styling:
+- Dark grey-blue sans-serif.
+- Approximately 9–10 pt.
+
+Keep the footer understated and aligned with the left slide margin.
+
+==================================================
+16. FINAL ALIGNMENT AND QUALITY REQUIREMENTS
+==================================================
+
+Preserve all wording exactly as written.
+
+Do not introduce additional inputs, outputs, external integrations, or unrelated architecture blocks.
+
+Do not turn the architecture into a simple straight timeline.
+
+Do not add decorative graphics that do not convey information.
+
+Use:
+- Equal spacing between paired cards.
+- Symmetrical branches.
+- Consistent icon sizes.
+- Consistent artifact-chip heights.
+- Consistent callout-box styling.
+- Consistent numbered badge placement.
+
+All text must remain readable at normal slideshow size.
+
+The main visual hierarchy must be:
+
+1. Title.
+2. Architecture dependency web.
+3. Human-review gate.
+4. Intermediate artifacts.
+5. Callouts and legend.
+
+Use editable PowerPoint icons and shapes throughout.
+
+The completed slide should visually communicate:
+
+Schema Ingest creates extractor.json.
+Intermediate Mapping uses the extracted schema and creates intermediate_mapping.json.
+Normalize consumes extractor.json and intermediate_mapping.json and creates normalized.json.
+The normalized model is shown through the ER Review Gate for human validation.
+After approval, Normalized MatViews use normalized.json and extractor.json.
+Summary MatViews use the business use case, normalized.json and extractor.json.
+Both generated MatView artifacts are combined to create an automated merge request.
