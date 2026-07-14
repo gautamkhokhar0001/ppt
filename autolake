@@ -1,0 +1,546 @@
+AutoLake
+
+Automated Generation of Lakehouse Data Products from Semi-Structured Data
+
+1. Executive Summary
+
+AutoLake is an agentic developer tool that automates the creation of Lakehouse data products from semi-structured source data.
+
+In many applications, operational data is stored in systems such as DynamoDB and later ingested into the Lakehouse. Although the data becomes centrally available, it often arrives as nested JSON or other semi-structured formats. This makes the data difficult to query directly and requires engineers to manually understand the source schema, identify nested relationships, design normalized tables, write transformations, and create materialized views.
+
+AutoLake reduces this manual effort by analysing the source application and Lakehouse repositories, identifying the structure of the ingested data, proposing a normalized relational model, and generating the required Lakehouse artifacts.
+
+The tool operates as a VS Code extension and keeps the developer in control through review and approval checkpoints. It does not directly deploy changes without validation. Instead, it generates reviewable code and configuration files, validates them, and creates a merge request for the final changes.
+
+⸻
+
+2. Problem Statement
+
+Operational applications commonly store data in flexible NoSQL databases such as DynamoDB. This allows application teams to evolve their data models quickly, but the resulting records are usually nested and semi-structured.
+
+When this data is copied into the Lakehouse, it may still be stored as a JSON document inside a small number of columns. The data has technically reached the analytics platform, but it is not yet easy for analysts or downstream applications to use.
+
+Creating a usable data product from such data currently requires several manual activities:
+
+* Understanding the source application data model
+* Reading DynamoDB entity and bean definitions
+* Inspecting the existing Lakehouse ingestion configuration
+* Identifying nested objects, arrays and relationships
+* Designing normalized tables
+* Deciding primary and foreign keys
+* Writing PURE model definitions
+* Writing materialized-view transformations
+* Validating the generated artifacts
+* Creating and reviewing repository changes
+
+This process is time-consuming, repetitive and highly dependent on domain knowledge. Different developers may also model the same data differently, leading to inconsistent outputs and additional review effort.
+
+⸻
+
+3. Proposed Solution
+
+AutoLake provides a guided automation workflow for converting semi-structured Lakehouse data into a normalized and queryable data product.
+
+The tool reads two main sources:
+
+1. The application repository, which contains the source entities, DynamoDB beans and related domain models.
+2. The Lakehouse repository, which contains the ingestion configuration and existing Lakehouse definitions.
+
+Using these inputs, AutoLake extracts the source metadata and produces an intermediate representation of the application data model. An LLM-assisted normalization stage then proposes the required relational tables and relationships.
+
+After human approval, the system generates:
+
+* Normalized table definitions
+* PURE model files
+* Materialized-view definitions
+* Join and aggregation logic
+* Repository-ready output files
+* A merge request containing the proposed changes
+
+The generated output remains reviewable and traceable throughout the process.
+
+⸻
+
+4. Goals
+
+The main goals of AutoLake are to:
+
+* Reduce the time required to create Lakehouse data products
+* Automate repetitive schema-analysis and code-generation tasks
+* Produce consistent and reusable data models
+* Improve the discoverability of semi-structured data
+* Keep human reviewers involved in important modelling decisions
+* Generate repository-ready artifacts instead of only textual suggestions
+* Preserve traceability between the source model and generated output
+* Reduce errors caused by manual copying and transformation work
+
+⸻
+
+5. Scope
+
+AutoLake focuses on generating normalized Lakehouse artifacts from semi-structured data that has already been ingested into the Lakehouse.
+
+The system covers:
+
+* Source-repository analysis
+* Lakehouse-ingestion analysis
+* Schema extraction
+* Entity and relationship discovery
+* Relational-model generation
+* PURE model generation
+* Materialized-view generation
+* Validation and review
+* GitLab branch and merge-request creation
+
+The current solution does not aim to replace the complete data-ingestion platform. It works after the source data has been onboarded or when the corresponding ingestion configuration is available.
+
+⸻
+
+6. High-Level Workflow
+
+The AutoLake workflow is divided into the following stages.
+
+6.1 Repository Selection
+
+The user starts the workflow from the AutoLake VS Code extension.
+
+The user provides or selects:
+
+* The source application repository
+* The target Lakehouse repository
+* The relevant base branch
+* The Lakehouse namespace or target data product
+
+The extension checks out the required repositories locally.
+
+6.2 Source Metadata Extraction
+
+Deterministic extractors inspect the application repository and identify:
+
+* DynamoDB entities
+* DynamoDB bean classes
+* Fields and data types
+* Nested objects
+* Lists and collections
+* Enum definitions
+* Key annotations
+* Parent-child relationships
+
+The extracted information is stored in a structured intermediate artifact.
+
+This stage uses conventional parsing and repository inspection instead of relying entirely on an LLM. This makes the first stage faster, repeatable and easier to validate.
+
+6.3 Lakehouse Metadata Extraction
+
+The Lakehouse repository is analysed to locate the ingestion definition corresponding to the selected application data.
+
+The extractor identifies information such as:
+
+* Existing Lakehouse table definitions
+* Source JSON columns
+* Primary identifiers
+* Namespaces
+* Current data-product configuration
+* Existing mappings and conventions
+
+This information is combined with the application metadata.
+
+6.4 Intermediate Mapping
+
+The extracted application and Lakehouse metadata are transformed into a common intermediate representation.
+
+This intermediate mapping acts as the contract between the extraction and generation stages. It represents:
+
+* Source entities
+* Fields
+* Data types
+* Candidate keys
+* Nested relationships
+* List relationships
+* Existing Lakehouse mappings
+* Confidence levels
+* Unresolved modelling decisions
+
+Using a structured intermediate representation prevents later stages from repeatedly parsing the source repositories.
+
+6.5 Schema Normalization
+
+An LLM-assisted agent analyses the intermediate mapping and proposes a normalized relational model.
+
+The proposed model may contain:
+
+* One primary table for the main entity
+* Child tables for nested objects
+* Separate tables for repeated lists
+* Parent-child relationships
+* Primary keys
+* Foreign keys
+* Suggested column names
+* Lakehouse-compatible data types
+
+For example, a single DynamoDB record containing a program, its versions and nested entries may be transformed into multiple related tables instead of remaining as one large JSON document.
+
+6.6 Human Review
+
+The proposed model is displayed to the user before code generation.
+
+The reviewer can inspect:
+
+* Proposed tables
+* Columns and types
+* Primary keys
+* Foreign keys
+* Entity relationships
+* Low-confidence mappings
+* Suggested naming decisions
+
+The user can approve the model or request corrections.
+
+This checkpoint is important because normalization is not always a purely technical decision. Some choices depend on business meaning and expected query patterns.
+
+6.7 Artifact Generation
+
+After approval, AutoLake generates the required implementation artifacts.
+
+The generated output includes:
+
+* PURE classes
+* PURE mappings
+* Relational table definitions
+* Materialized-view definitions
+* Join logic
+* Array-expansion logic
+* Aggregation logic
+* Required repository files and directories
+
+The output follows the conventions of the target Lakehouse repository.
+
+6.8 Validation
+
+The generated artifacts are validated before they are committed.
+
+Validation includes checks such as:
+
+* Required fields are present
+* Table and column names are valid
+* Primary keys are defined
+* Foreign-key references are resolvable
+* Relationships are internally consistent
+* PURE syntax is structurally correct
+* Materialized-view definitions are complete
+* Expected files have been generated
+* No unsupported or unresolved type remains
+
+When validation fails, the relevant stage can be rerun after correction instead of restarting the complete workflow.
+
+6.9 Repository Delivery
+
+Once the generated output passes validation, AutoLake:
+
+* Creates a new branch
+* Writes the generated files to the target repository
+* Commits the changes
+* Pushes the branch
+* Creates a GitLab merge request
+
+The merge request remains the final approval and integration point. AutoLake does not bypass the existing engineering review process.
+
+⸻
+
+7. System Architecture
+
+AutoLake consists of four main layers.
+
+7.1 VS Code Extension
+
+The VS Code extension provides the user-facing interface.
+
+It is responsible for:
+
+* Collecting repository and namespace inputs
+* Starting the workflow
+* Displaying stage progress
+* Showing generated schema proposals
+* Collecting approvals and corrections
+* Displaying validation errors
+* Opening the generated merge request
+
+7.2 Pipeline Orchestrator
+
+The orchestrator manages the complete workflow.
+
+It controls:
+
+* Stage execution
+* Input and output passing
+* Pipeline state
+* Error handling
+* Retry behaviour
+* Approval checkpoints
+* Resume-from-failure support
+
+Each stage writes its output to disk before the next stage begins. This makes the workflow inspectable and resumable.
+
+7.3 Extraction and Generation Modules
+
+These modules perform the main technical work.
+
+They include:
+
+* Application repository extractor
+* Lakehouse repository extractor
+* Intermediate-mapping generator
+* Normalization agent
+* Summary-matview generator
+* PURE generator
+* Validation engine
+* Repository-delivery module
+
+Some stages are deterministic, while others use an LLM where reasoning is required.
+
+7.4 Tool and Platform Integrations
+
+AutoLake integrates with external systems through controlled tools and APIs.
+
+These integrations include:
+
+* GitLab for repository operations
+* Confluence for documentation retrieval
+* Internal Lakehouse utilities
+* File-system tools
+* Validation tools
+* LLM services
+
+Sensitive credentials are retrieved from approved secret-management systems and are not written into generated files or logs.
+
+⸻
+
+8. Why the Solution Uses Both Deterministic Logic and LLMs
+
+AutoLake does not use an LLM for every step.
+
+Repository cloning, source parsing, annotation extraction, type detection, file writing, validation and Git operations are deterministic operations. These tasks are more reliable when implemented using normal program logic.
+
+LLMs are used only for stages that require judgement, such as:
+
+* Interpreting incomplete domain relationships
+* Proposing normalized table structures
+* Choosing between multiple valid modelling options
+* Generating transformation logic from structured metadata
+* Explaining low-confidence decisions
+
+This hybrid approach improves both reliability and flexibility.
+
+⸻
+
+9. Human-in-the-Loop Design
+
+AutoLake is designed as an assisted automation system rather than a fully autonomous deployment tool.
+
+Human approval is required at important modelling stages because:
+
+* The same source structure may support multiple valid relational models
+* Technical metadata may not completely express business meaning
+* Key selection may require domain knowledge
+* Table names must remain understandable to downstream consumers
+* Aggregation requirements may depend on business use cases
+
+The LLM proposes the model, but the reviewer remains responsible for accepting or correcting the final design.
+
+⸻
+
+10. Example Data Transformation
+
+Consider a DynamoDB record that contains:
+
+* A program identifier
+* Program metadata
+* A list of versions
+* A list of entries inside each version
+* Status and audit information
+
+In the Lakehouse, the complete record may initially be stored as a single JSON document.
+
+AutoLake may normalize this into:
+
+* A Program table
+* A ProgramVersion table
+* A ProgramEntry table
+* An Audit table
+
+The child tables contain foreign keys that reference their parent records.
+
+This allows analysts to query individual entities using standard relational operations instead of repeatedly parsing nested JSON.
+
+⸻
+
+11. Materialized Views
+
+The generated materialized views serve as transformation and access layers on top of the raw ingested data.
+
+AutoLake may generate two categories of materialized views.
+
+11.1 Audit Materialized Views
+
+Audit views preserve entity history and version-level information.
+
+They are useful for:
+
+* Tracking changes over time
+* Debugging data issues
+* Compliance analysis
+* Reconstructing previous states
+
+11.2 Latest Materialized Views
+
+Latest views expose only the most recent version of an entity.
+
+They are useful for:
+
+* Business reporting
+* Current-state analytics
+* Downstream applications
+* Simplified consumer queries
+
+Keeping audit and latest views separate allows the data product to support both historical and operational use cases.
+
+⸻
+
+12. Validation and Quality Controls
+
+AutoLake applies quality checks at multiple levels.
+
+Source Validation
+
+The system confirms that the expected source entities, annotations and Lakehouse definitions are available.
+
+Schema Validation
+
+The normalized model is checked for missing keys, invalid references and unresolved types.
+
+Artifact Validation
+
+Generated PURE and materialized-view files are checked for structural consistency and required declarations.
+
+Relationship Validation
+
+Primary-key and foreign-key relationships are verified across all proposed tables.
+
+Human Validation
+
+The final schema proposal is reviewed before repository changes are created.
+
+Repository Validation
+
+The generated branch and merge request follow the existing source-control review process.
+
+⸻
+
+13. Security and Governance
+
+AutoLake follows the existing engineering governance model.
+
+The main controls are:
+
+* Credentials are retrieved from approved secret storage
+* Secrets are not written to generated files
+* Repository access follows the user’s existing permissions
+* Every generated change is committed to a separate branch
+* All changes are visible in a merge request
+* Generated artifacts remain reviewable
+* Important modelling decisions require human approval
+* Pipeline outputs are stored for traceability and debugging
+
+The system generates code, but the existing repository and review controls remain the source of authority.
+
+⸻
+
+14. Key Design Principles
+
+Artifact-Driven Pipeline
+
+Every stage produces a structured artifact that becomes the input to the next stage. This makes the workflow traceable and resumable.
+
+Human-Controlled Automation
+
+The system automates repetitive work but keeps reviewers involved in decisions that require domain understanding.
+
+Deterministic Where Possible
+
+Normal program logic is used for tasks that do not require interpretation. LLMs are used only where reasoning adds value.
+
+Review Before Integration
+
+Generated changes are delivered through a merge request and are not directly merged or deployed.
+
+Reusability
+
+The pipeline is designed so that the same workflow can be applied to different services, entities and Lakehouse data products.
+
+Failure Isolation
+
+Each stage can fail, retry and resume independently. A failure in a later stage does not require the complete workflow to restart.
+
+⸻
+
+15. Benefits
+
+AutoLake provides the following benefits:
+
+* Faster onboarding of semi-structured data
+* Reduced manual schema-analysis effort
+* Consistent data-product structure
+* Lower risk of copy-and-paste errors
+* Faster generation of PURE and materialized-view artifacts
+* Improved traceability between source entities and Lakehouse tables
+* Easier review through structured intermediate outputs
+* Reusable automation across multiple application teams
+* Better accessibility of Lakehouse data for analysts and downstream consumers
+
+⸻
+
+16. Current Limitations
+
+The current implementation has some limitations:
+
+* Complex domain-specific relationships may still require manual correction
+* Incomplete or inconsistent source annotations can reduce mapping accuracy
+* Generated results depend on the quality of the source repositories
+* Highly custom materialized-view logic may require developer changes
+* LLM-generated proposals must still be reviewed
+* The system currently focuses on supported repository and schema patterns
+* End-to-end deployment remains outside the current scope
+
+These limitations are handled through validation, confidence reporting and human review.
+
+⸻
+
+17. Future Enhancements
+
+Potential future improvements include:
+
+* Support for additional source databases
+* Automatic profiling of real Lakehouse data samples
+* Better confidence scoring for schema decisions
+* Incremental regeneration when the source schema changes
+* Schema-drift detection
+* Automated lineage generation
+* Impact analysis for existing downstream consumers
+* Additional validation against Lakehouse execution engines
+* Reusable organization-level modelling rules
+* Comparison between generated and existing data products
+* Automated test generation for materialized views
+
+⸻
+
+18. Conclusion
+
+AutoLake converts semi-structured Lakehouse data into structured and reusable data products through a guided automation workflow.
+
+It analyses the source application and Lakehouse repositories, extracts the underlying data model, proposes a normalized schema, generates PURE and materialized-view artifacts, validates the output and creates a merge request for review.
+
+The main value of AutoLake is not simply code generation. It standardizes and accelerates the complete process of understanding, modelling and publishing semi-structured data while keeping engineers in control of important decisions.
+
+In simple terms:
+
+AutoLake transforms raw semi-structured data already present in the Lakehouse into normalized, queryable and reviewable data products with significantly less manual engineering effort.
